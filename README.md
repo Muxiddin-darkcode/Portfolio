@@ -1,40 +1,34 @@
-# DarkMinimal - Free Tailwind CSS & Astro Portfolio Website Template
-#### Preview
+# Shamsiddinov Muxiddin — Professional Portfolio 🚀
 
- - [Demo](https://themewagon.github.io/dark-minimal/)
+> **IT Mutaxassisi | Web Developer | Telegram Bot Developer | IT Educator**
 
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/dark-minimal/)
+---
 
-## Getting Started
+## 🌟 Haqida
+Shamsiddinov Muxiddin Xusniddin o‘g‘lining rasmiy shaxsiy portfolio veb-sayti.
+Veb-dasturlash, Telegram botlar ishlab chiqish va Guliston shahridagi Rich Boss xususiy maktabida bo‘lajak dasturchilarga saboq berish faoliyati yoritilgan.
 
-1. Clone Repository
-```
-git clone https://github.com/themewagon/dark-minimal.git
-```
-2. Install Dependencies
-```
-npm i
-```
-3. Run the development server:
+## 🛠 Texnologiyalar to‘plami
+- **Framework:** [Astro 5](https://astro.build/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Interaktivlik:** [React 19](https://react.dev/)
+- **Backend & Botlar tajribasi:** Python, Aiogram 3, SQLite, MySQL, REST API
+- **Joylashtirish (Deployment):** Vercel / Netlify / GitHub Pages
 
+## 🚀 Loyihani kompyuterda ishga tushirish
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Bog'liqliklarni o'rnatish
+pnpm install
+
+# Dasturchi rejimida ishga tushirish (localhost:4321)
 pnpm dev
-# or
-bun dev
+
+# Saytni to'liq yig'ish (production build)
+pnpm build
 ```
 
-## Author 
-```
-Design and code is completely written by Andres Hernandez and development team. 
-```
-
-## License
-
- - Design and Code is Copyright &copy; <a href="https://github.com/Gothsec" target="_blank">Andres Hernandez</a>
- - Licensed cover under [MIT]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+## 📬 Aloqa
+- **Telegram:** [@developer_muxiddin](https://t.me/developer_muxiddin)
+- **Instagram:** [@aurev.uz](https://instagram.com/aurev.uz)
+- **GitHub:** [Muxiddin-darkcode](https://github.com/Muxiddin-darkcode)
+- **Manzil:** Guliston shahri, Sirdaryo viloyati, O‘zbekiston
