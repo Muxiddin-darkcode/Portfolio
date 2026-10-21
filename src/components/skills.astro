@@ -1,0 +1,66 @@
+---
+import SkillsList from "../React/SkillsList.tsx";
+---
+
+<section id="skills" class="py-16 sm:py-24 border-t border-white/10 text-[var(--white)]">
+  <div class="space-y-12">
+    
+    <!-- Section Header -->
+    <div class="space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--sec)]/10 text-[var(--sec)] text-xs font-semibold tracking-wider uppercase">
+        <span>Texnik salohiyat</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+        Ko‘nikmalar va Texnologiyalar
+      </h2>
+      <p class="text-base text-gray-400 max-w-2xl">
+        Frontend veb-dasturlash, asinxron Telegram botlar yaratish, ma’lumotlar bazasi, zamonaviy axborot texnologiyalari va pedagogik metodikalar.
+      </p>
+    </div>
+
+    <!-- Interactive Skills Component -->
+    <SkillsList client:load />
+
+    <!-- Extra Highlight Banner: Rich Boss & Pedagogical Approach -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+      
+      <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3 hover:border-emerald-500/30 transition-all">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+        </div>
+        <h4 class="text-base font-bold text-white">Amaliy Loyihaviy Ta'lim</h4>
+        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+          Rich Boss maktabi va texnikumdagi darslarda o‘quvchilarga tayyor javobni emas, balki muammoni tahlil qilish va o‘z dasturiy yechimini topishni o‘rgataman.
+        </p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3 hover:border-[var(--sec)]/30 transition-all">
+        <div class="w-10 h-10 rounded-xl bg-[var(--sec)]/10 text-[var(--sec)] flex items-center justify-center font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M4 6h16v12H4z"/>
+          </svg>
+        </div>
+        <h4 class="text-base font-bold text-white">Telegram Bot Arxitekturasi</h4>
+        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+          Aiogram 3 yordamida tezkor, asinxron va ma'lumotlar bazasi (SQLite) bilan mustahkam bog‘langan avtomatlashtirilgan Telegram botlar ishlab chiqish.
+        </p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-3 hover:border-cyan-500/30 transition-all">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.5h-2v-2h2zm0-4h-2V7h2z"/>
+          </svg>
+        </div>
+        <h4 class="text-base font-bold text-white">Apparat & Tizimli Bilim</h4>
+        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+          Muhandis-elektronchi tajribasi tufayli nafaqat dasturiy ta'minot, balki kompyuter qurilmalari, zamonaviy protsessorlar va elektronika asoslarini chuqur bilaman.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>

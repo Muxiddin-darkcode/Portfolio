@@ -1,0 +1,136 @@
+---
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const goals = [
+  "Zamonaviy va foydalanuvchiga qulay veb-ilovalar yaratish",
+  "Telegram botlar orqali ta'lim va biznes jarayonlarini avtomatlashtirish",
+  "Ta’lim muassasalari uchun raqamli boshqaruv yechimlarini ishlab chiqish",
+  "O‘quvchilarni dasturlashga qiziqtirish va ularning mustaqil bilimini rivojlantirish",
+  "Algoritmik fikrlash va texnik ko‘nikmalarni xalqaro darajada chuqurlashtirish",
+  "Jamoaviy IT loyihalari va xalqaro dasturlash musobaqalarida faol qatnashish",
+];
+---
+
+<section id="achievements" class="py-16 sm:py-24 border-t border-white/10 text-[var(--white)]">
+  <div class="space-y-12">
+    
+    <!-- Section Header -->
+    <div class="space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--sec)]/10 text-[var(--sec)] text-xs font-semibold tracking-wider uppercase">
+        <span>Yutuqlar & Maqsadlar</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+        Tanlovlar va Kasbiy Marralar
+      </h2>
+      <p class="text-base text-gray-400 max-w-2xl">
+        Sun'iy intellekt xakatonlari, algoritmik musobaqalar va kelajakdagi IT-ta'lim strategiyasi.
+      </p>
+    </div>
+
+    <!-- Featured Achievement Hero Card: AI Hackathon 2nd Place -->
+    <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121622] p-6 sm:p-10 shadow-2xl group">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[var(--sec)]/15 rounded-full blur-3xl pointer-events-none group-hover:bg-[var(--sec)]/25 transition-all"></div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        
+        <!-- Image / Trophy -->
+        <div class="lg:col-span-5 overflow-hidden rounded-2xl border border-white/15 bg-black/40">
+          <img
+            src={`${baseUrl}/images/hackathon_award.jpg`}
+            alt="AI Hackathon 2nd Place Blitz GDPI"
+            class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Award Details -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+            🏆 2-O‘rin Sovrindori • 2026-yil
+          </div>
+          
+          <h3 class="text-2xl sm:text-3xl font-bold text-white leading-tight">
+            Sun’iy Intellekt Xakatoni Sovrindori
+          </h3>
+          
+          <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+            Guliston davlat pedagogika instituti (GDPI) nomidan tuzilgan <strong class="text-white">Blitz</strong> jamoasi tarkibida nufuzli sun’iy intellekt xakatonida <strong class="text-amber-400">ikkinchi o‘rinni</strong> qo‘lga kiritganman.
+          </p>
+
+          <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+            Ushbu musobaqa jamoaviy ishlash, innovatsion g‘oyalarni tezkor dasturiy prototipga aylantirish, sun'iy intellekt modellarini amaliyotga tatbiq etish va yangi texnologiyalarni chuqur o‘rganishga bo‘lgan ishtiyoqimni yanada yuksaltirdi.
+          </p>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="text-xs px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300">#AIHackathon</span>
+            <span class="text-xs px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300">#BlitzJamoasi</span>
+            <span class="text-xs px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300">#GDPI</span>
+            <span class="text-xs px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300">#ArtificialIntelligence</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Two-column: Algorithmic Programming & Career Goals -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Algorithmic Programming -->
+      <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4">
+        <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path d="M12 2a2 2 0 0 1 2 2v2h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4V4a2 2 0 0 1 2-2zm-2 6H6v10h12V8h-4v2h-4V8zm2-4v2h0V4z"/>
+          </svg>
+        </div>
+
+        <h3 class="text-xl font-bold text-white">
+          Algoritmik Dasturlash (ICPC & Robokontest)
+        </h3>
+
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Algoritmik fikrlash va dasturlash masalalarini optimallashgan yechimlar bilan hal etish doimiy qiziqishimdir. <strong class="text-white">ICPC</strong> hamda milliy <strong class="text-cyan-400">Robokontest</strong> kabi musobaqalardagi algoritmik masalalarni tahlil qilish, murakkablik darajasi (Time/Space Complexity) past bo‘lgan yechimlar ishlab chiqish ustida ishlayman.
+        </p>
+
+        <ul class="space-y-2 text-xs sm:text-sm text-gray-400 pt-2 border-t border-white/10">
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400 font-bold">✓</span> Mantiqiy tahlil va optimal algoritmlar
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400 font-bold">✓</span> Ma'lumotlar tuzilmalari va rekursiya
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-cyan-400 font-bold">✓</span> O‘quvchilarda algoritmik poydevorni shakllantirish
+          </li>
+        </ul>
+      </div>
+
+      <!-- Professional Future Goals -->
+      <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4">
+        <div class="w-12 h-12 rounded-2xl bg-[var(--sec)]/15 text-[var(--sec)] flex items-center justify-center font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+
+        <h3 class="text-xl font-bold text-white">
+          Kelajakdagi Kasbiy Maqsadlarim
+        </h3>
+
+        <div class="space-y-2.5 pt-1">
+          {
+            goals.map((goal, idx) => (
+              <div class="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300">
+                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-white/5 text-[var(--sec)] flex items-center justify-center text-[10px] font-bold mt-0.5">
+                  {idx + 1}
+                </span>
+                <span>{goal}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

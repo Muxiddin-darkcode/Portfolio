@@ -1,0 +1,140 @@
+---
+interface WorkExperience {
+  period: string;
+  role: string;
+  company: string;
+  location: string;
+  type: string;
+  desc: string;
+  isCurrent?: boolean;
+}
+
+const experiences: WorkExperience[] = [
+  {
+    period: "Hozirgi vaqtda",
+    role: "Dasturlash yo‘nalishida o‘qituvchi",
+    company: "Rich Boss xususiy maktabi",
+    location: "Guliston shahri, O‘zbekiston",
+    type: "Asosiy faoliyat",
+    desc: "Bo‘lajak dasturchilarga dasturlash asoslarini o‘rgatish, algoritmik va mantiqiy fikrlashni rivojlantirish. Nazariy bilimlarni amaliy mashg‘ulotlar va mustaqil dasturiy loyihalar bilan mustahkamlash.",
+    isCurrent: true,
+  },
+  {
+    period: "2026-yil 4-sentabr – 9-oktabr",
+    role: "Informatika fani o‘qituvchisi",
+    company: "Guliston shahar 8-sonli umumiy o‘rta ta’lim maktabi",
+    location: "Guliston shahri",
+    type: "Ta'lim berish",
+    desc: "Maktab o‘quvchilariga informatika fani bo‘yicha zamonaviy dasturlar, kompyuter savodxonligi va axborot texnologiyalari asoslaridan dars berish.",
+  },
+  {
+    period: "2025-yil 17-oktabr – 2026-yil 26-avgust",
+    role: "O‘qituvchi (Maxsus fanlar)",
+    company: "Sirdaryo Ilg‘or Kasbiy Mahorat Texnikumi",
+    location: "Sirdaryo viloyati",
+    type: "O‘rindoshlik asosida",
+    desc: "Kasbiy ta’lim va maxsus axborot texnologiyalari fanlarini o‘qitish, kompyuter qurilmalari, apparat ta'minoti va amaliy dasturlash bo‘yicha o‘quv materiallari bilan ishlash.",
+  },
+  {
+    period: "2025-yil 3-sentabr – 22-oktabr",
+    role: "O‘qituvchi",
+    company: "Sirdaryo pedagogika texnikumi",
+    location: "Sirdaryo viloyati",
+    type: "Tashqi o‘rindoshlik",
+    desc: "Bo‘lajak pedagoglarga axborot texnologiyalari va raqamli ta'lim vositalari bo‘yicha dars berish.",
+  },
+  {
+    period: "2024-yil 26-noyabr – 2026-yil 23-yanvar",
+    role: "Birinchi toifali muhandis-elektronchi",
+    company: "Guliston davlat pedagogika instituti (GDPI)",
+    location: "Texnik qo‘llab-quvvatlash bo‘limi",
+    type: "Muhandislik faoliyati",
+    desc: "Texnik qurilmalar va elektron uskunalar bilan ishlash, server va tarmoq infratuzilmasiga texnik yordam ko‘rsatish hamda oliygohdagi raqamli texnik jarayonlarni boshqarish.",
+  },
+  {
+    period: "2024-yil 16-noyabr – 2-dekabr",
+    role: "Ip yigiruv uskunalarining urchuqlarini yig‘uvchi",
+    company: "FORTUNA TEKSTIL qo‘shma korxonasi",
+    location: "Sirdaryo viloyati",
+    type: "Ishlab chiqarish tajribasi",
+    desc: "Sanoat texnikasi bilan ishlash, yuqori mas'uliyat, diqqat va jamoaviy mehnat intizomini shakllantirish tajribasi.",
+  },
+  {
+    period: "2024-yil 5–14-dekabr",
+    role: "Yordamchi ishchi",
+    company: "Fermer xo‘jaligidagi faoliyat",
+    location: "Sirdaryo viloyati",
+    type: "Jismoniy mehnat tajribasi",
+    desc: "Turli muhitlarda ishlashga tayyorlik, sabr-toqat, har qanday mehnat sharoitiga tez moslashish va mas'uliyatni his qilish.",
+  },
+];
+---
+
+<section id="experience" class="py-16 sm:py-24 border-t border-white/10 text-[var(--white)]">
+  <div class="space-y-12">
+    
+    <!-- Section Header -->
+    <div class="space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--sec)]/10 text-[var(--sec)] text-xs font-semibold tracking-wider uppercase">
+        <span>Mehnat faoliyati</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+        Tajriba va Xronologiya
+      </h2>
+      <p class="text-base text-gray-400 max-w-2xl">
+        Rasmiy mehnat faoliyati ma’lumotnomasi asosida shakllantirilgan ish joylari, davrlar va pedagogik-muhandislik bosqichlari.
+      </p>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="relative border-l-2 border-white/10 ml-4 sm:ml-8 space-y-8">
+      {
+        experiences.map((exp) => (
+          <div class="relative pl-6 sm:pl-10 group">
+            
+            <!-- Timeline Dot -->
+            <div class={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
+              exp.isCurrent
+                ? "bg-emerald-400 border-[#0d0f14] shadow-lg shadow-emerald-400/50 scale-125"
+                : "bg-[var(--sec)] border-[#0d0f14] group-hover:scale-125"
+            }`}>
+              {exp.isCurrent && (
+                <span class="animate-ping absolute inset-0 rounded-full bg-emerald-400 opacity-75"></span>
+              )}
+            </div>
+
+            <!-- Card -->
+            <div class="glass-card p-6 sm:p-7 rounded-2xl space-y-3 hover:border-white/20">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-xs sm:text-sm font-semibold text-[var(--sec)]">
+                  {exp.period}
+                </span>
+                <span class={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${
+                  exp.isCurrent
+                    ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                    : "bg-white/5 text-gray-400 border-white/10"
+                }`}>
+                  {exp.type}
+                </span>
+              </div>
+
+              <div>
+                <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-[var(--sec)] transition-colors">
+                  {exp.role}
+                </h3>
+                <p class="text-sm font-medium text-gray-300">
+                  {exp.company} <span class="text-gray-500">• {exp.location}</span>
+                </p>
+              </div>
+
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed pt-1">
+                {exp.desc}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Home from "@/components/home.astro";
+import About from "@/components/about.astro";
+import Skills from "@/components/skills.astro";
+import Projects from "@/components/projects.astro";
+import Experience from "@/components/experience.astro";
+import Achievements from "@/components/achievements.astro";
+import Contact from "@/components/contact.astro";
+import Footer from "@/components/footer.astro";
+---
+
+<Layout
+  title="Shamsiddinov Muxiddin | IT Mutaxassisi & Dasturchi & Pedagog"
+  description="Shamsiddinov Muxiddin Xusniddin o‘g‘li — IT mutaxassisi, Web Developer, Telegram Bot Developer va IT Educator. Rich Boss xususiy maktabi ustozi, Guliston davlat pedagogika instituti talabasi."
+>
+  <Nav />
+  <main class="space-y-6">
+    <Home />
+    <About />
+    <Skills />
+    <Projects />
+    <Experience />
+    <Achievements />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

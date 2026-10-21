@@ -1,0 +1,65 @@
+---
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const technologies = [
+  { id: "python", name: "Python" },
+  { id: "telegram", name: "Aiogram 3" },
+  { id: "sqlite", name: "SQLite" },
+  { id: "javaScript", name: "JavaScript" },
+  { id: "tailwindcss", name: "Tailwind CSS" },
+  { id: "bootstrap", name: "Bootstrap" },
+  { id: "HTML5", name: "HTML5" },
+  { id: "CSS3", name: "CSS3" },
+  { id: "git", name: "Git & GitHub" },
+  { id: "nodejs", name: "Node.js" },
+  { id: "scratch", name: "Scratch" },
+  { id: "react", name: "React" },
+  { id: "astro", name: "Astro" },
+  { id: "vercel", name: "Vercel / Render" },
+];
+---
+
+<div class="relative overflow-x-hidden py-4">
+  <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[var(--background)] to-transparent z-20"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[var(--background)] to-transparent z-20"></div>
+
+  <div class="flex animate-scroll w-max will-change-transform py-2">
+    {
+      [...technologies, ...technologies].map((tech, index) => (
+        <div 
+          class="flex items-center gap-2.5 px-6 py-2 mx-2 rounded-xl bg-white/[0.02] border border-white/5 hover:border-[var(--sec)]/40 hover:bg-white/[0.05] transition-all duration-300 group cursor-default"
+          aria-hidden={index >= technologies.length ? "true" : "false"}
+        >
+          <img
+            src={`${baseUrl}/svg/${tech.id}.svg`}
+            alt={tech.name}
+            class="h-5 w-5 object-contain transition-transform group-hover:scale-110 opacity-80 group-hover:opacity-100"
+            width="20"
+            height="20"
+            loading="lazy"
+          />
+          <span class="text-xs sm:text-sm font-medium text-gray-300 group-hover:text-white whitespace-nowrap transition-colors">
+            {tech.name}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style is:global>
+  @keyframes scrollTech {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  .animate-scroll {
+    animation: scrollTech 40s linear infinite;
+  }
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+</style>

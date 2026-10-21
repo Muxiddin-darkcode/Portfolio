@@ -1,0 +1,315 @@
+---
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+interface Project {
+  id: string;
+  title: string;
+  category: "Tayyor" | "Jarayonda" | "G‘oya";
+  type: string;
+  desc: string;
+  image: string;
+  tags: string[];
+  github?: string;
+  demo?: string;
+}
+
+const projects: Project[] = [
+  {
+    id: "ikmt-web",
+    title: "Sirdaryo IKMT Rasmiy Veb-Sayti",
+    category: "Tayyor",
+    type: "Veb-Portal",
+    desc: "Ta’lim muassasasi faoliyatini internetda yoritish, yangiliklar va e’lonlar, ta’lim yo‘nalishlari, rahbariyat va xodimlar sahifalari hamda administrator paneli.",
+    image: `${baseUrl}/images/ikmt_web.jpg`,
+    tags: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Admin Panel"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+  {
+    id: "ikmt-bot",
+    title: "Sirdaryo IKMT AI Assistant",
+    category: "Tayyor",
+    type: "Telegram Bot",
+    desc: "Texnikum foydalanuvchilariga yordam beruvchi aqlli bot: menyu, rol tanlash, institut haqidagi ma'lumotlar, dars jadvali va ob-havo xizmati integratsiyasi.",
+    image: `${baseUrl}/images/ikmt_bot.jpg`,
+    tags: ["Python", "Aiogram 3", "SQLite", "Telegram API", "Weather API"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+  {
+    id: "my-slades",
+    title: "My Slades",
+    category: "Tayyor",
+    type: "Web / Shablonlar",
+    desc: "PowerPoint taqdimotlari va zamonaviy slayd shablonlari bilan ishlashni soddalashtirishga, taqdimotlarni chiroyli formatda yaratishga qaratilgan loyiha.",
+    image: `${baseUrl}/images/my_slades.jpg`,
+    tags: ["Frontend", "JavaScript", "Presentation UI", "GitHub"],
+    github: "https://github.com/Muxiddin-darkcode/My-Slades.git",
+  },
+  {
+    id: "dastur-top",
+    title: "Dastur Top Bot",
+    category: "Tayyor",
+    type: "Telegram Bot",
+    desc: "Foydali kompyuter va mobil dasturlarni topish, ularning vazifasi hamda xususiyatlarini foydalanuvchilarga qulay yetkazib berish boti.",
+    image: `${baseUrl}/images/ikmt_bot.jpg`,
+    tags: ["Python", "Aiogram", "Database", "Software Catalog"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+  {
+    id: "konkurs-qil",
+    title: "Konkurs Qil Bot",
+    category: "Jarayonda",
+    type: "Telegram Bot",
+    desc: "Telegram kanallari va guruhlarida avtomatlashtirilgan shaffof tanlovlar va konkurslarni tashkil etish, interfeys va ijtimoiy targ‘ibot imkoniyatlari.",
+    image: `${baseUrl}/images/ikmt_bot.jpg`,
+    tags: ["Python", "Aiogram 3", "SQLite", "Contest Logic"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+  {
+    id: "gdpi-togarak",
+    title: "GDPI To‘garak Platformasi",
+    category: "Jarayonda",
+    type: "EdTech Veb Platforma",
+    desc: "Guliston davlat pedagogika instituti to‘garaklari faoliyatini raqamlashtirish: administrator paneli, o‘qituvchi va talaba kabinetlari, SQLite bazasi va API.",
+    image: `${baseUrl}/images/gdpi_platform.jpg`,
+    tags: ["Python", "Web App", "SQLite", "API Integratsiya", "EdTech"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+  {
+    id: "soft-uz",
+    title: "SoftUz Loyihasi",
+    category: "Jarayonda",
+    type: "Veb-Katalog",
+    desc: "O‘zbekiston foydalanuvchilari uchun foydali dasturiy vositalarni to‘plash, taqqoslash va qulay topish imkonini beruvchi axborot platformasi.",
+    image: `${baseUrl}/images/ikmt_web.jpg`,
+    tags: ["Web Directory", "Python", "Frontend", "Search UI"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+  {
+    id: "metro-news",
+    title: "METRO NEWS",
+    category: "G‘oya",
+    type: "Telegram Bot G‘oyasi",
+    desc: "Metro va transport yangiliklari, harakat jadvallari va muhim e'lonlarni yo‘lovchilarga tezkor yetkazishga qaratilgan bot konsepsiyasi.",
+    image: `${baseUrl}/images/ikmt_bot.jpg`,
+    tags: ["Python", "Telegram Bot", "News API", "Urban Tech"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+  {
+    id: "energy-downloader",
+    title: "Energy Downloader",
+    category: "G‘oya",
+    type: "Universal Bot G‘oyasi",
+    desc: "Turli media materiallari va videolarni yuqori sifatda qulay yuklab olish jarayonini soddalashtirishga mo‘ljallangan bot loyihasi.",
+    image: `${baseUrl}/images/ikmt_bot.jpg`,
+    tags: ["Python", "Media Downloader", "Async Bot"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+  {
+    id: "ebook-audio-bot",
+    title: "Elektron & Audio Kitoblar Boti",
+    category: "G‘oya",
+    type: "Telegram Bot G‘oyasi",
+    desc: "PDF kitoblar va audio kitob materiallarini qulay qidirish, mutolaa qilish va tinglash imkoniyatini taqdim etuvchi axborot boti.",
+    image: `${baseUrl}/images/ikmt_bot.jpg`,
+    tags: ["Telegram Bot", "PDF Reader", "Audio Stream", "Storage"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+  {
+    id: "teacher-cabinet",
+    title: "O‘qituvchilar Uchun Elektron Kabinet",
+    category: "G‘oya",
+    type: "EdTech Konsepsiyasi",
+    desc: "O‘qituvchilarning kundalik ishlarini raqamlashtirish, dars materiallarini tizimlashtirish va ta’lim jarayonini soddalashtiruvchi elektron kabinet.",
+    image: `${baseUrl}/images/gdpi_platform.jpg`,
+    tags: ["EdTech", "Web Platform", "Education Management"],
+    github: "https://github.com/Muxiddin-darkcode",
+  },
+];
+---
+
+<section id="projects" class="py-16 sm:py-24 border-t border-white/10 text-[var(--white)]">
+  <div class="space-y-10">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div class="space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--sec)]/10 text-[var(--sec)] text-xs font-semibold tracking-wider uppercase">
+          <span>Portfoliom</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+          Loyihalarim
+        </h2>
+        <p class="text-base text-gray-400 max-w-xl">
+          Amaliy veb-sahifalar, Telegram botlar, axborot platformalari va rejalashtirilgan innovatsion g‘oyalar to‘plami.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-white/[0.03] border border-white/10 w-fit">
+        <button
+          data-filter="all"
+          class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 bg-[var(--sec)] text-white shadow-md shadow-[var(--sec)]/20"
+        >
+          Barchasi (11)
+        </button>
+        <button
+          data-filter="Tayyor"
+          class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 text-gray-400 hover:text-white"
+        >
+          Tayyor (4)
+        </button>
+        <button
+          data-filter="Jarayonda"
+          class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 text-gray-400 hover:text-white"
+        >
+          Jarayonda (3)
+        </button>
+        <button
+          data-filter="G‘oya"
+          class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 text-gray-400 hover:text-white"
+        >
+          G‘oya (4)
+        </button>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {
+        projects.map((project) => {
+          const statusBadge =
+            project.category === "Tayyor"
+              ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
+              : project.category === "Jarayonda"
+              ? "bg-amber-500/15 text-amber-400 border-amber-500/30"
+              : "bg-purple-500/15 text-purple-300 border-purple-500/30";
+
+          return (
+            <div
+              class="project-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+              data-category={project.category}
+            >
+              <div>
+                <!-- Image Header -->
+                <div class="relative h-48 sm:h-52 overflow-hidden bg-[#161a26]">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#121622] via-[#121622]/40 to-transparent"></div>
+                  
+                  <!-- Status and Type Badges -->
+                  <div class="absolute top-3 left-3 flex items-center gap-2">
+                    <span class={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${statusBadge}`}>
+                      ● {project.category}
+                    </span>
+                    <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-gray-300 border border-white/10">
+                      {project.type}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Content Body -->
+                <div class="p-5 sm:p-6 space-y-3">
+                  <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-[var(--sec)] transition-colors">
+                    {project.title}
+                  </h3>
+                  <p class="text-xs sm:text-sm text-gray-400 leading-relaxed line-clamp-3">
+                    {project.desc}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Footer with Tags and Links -->
+              <div class="p-5 sm:p-6 pt-0 space-y-4">
+                <div class="flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/5 text-gray-400 font-mono">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+                  <span class="text-xs text-gray-500 font-medium">
+                    {project.category === "Tayyor" ? "Amalda qo‘llanilgan" : project.category === "Jarayonda" ? "Ishlab chiqilmoqda" : "Konseptual reja"}
+                  </span>
+                  
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-300 hover:text-white transition-colors group/link"
+                    >
+                      <span>GitHub</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">
+                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <!-- GitHub Profile Banner -->
+    <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-white/[0.03] via-white/[0.05] to-transparent border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center sm:text-left">
+        <h4 class="text-lg font-bold text-white">
+          Boshqa kodlar va ishlanmalarim bilan tanishing
+        </h4>
+        <p class="text-xs sm:text-sm text-gray-400">
+          GitHub profillarim: <strong class="text-white">Muxiddin-darkcode</strong> hamda brend loyiham <strong class="text-[var(--sec)]">INFOGENIUZ</strong>
+        </p>
+      </div>
+
+      <a
+        href="https://github.com/Muxiddin-darkcode"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs sm:text-sm font-semibold transition-all hover:scale-105"
+      >
+        <span>GitHub profili</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+          <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>(".project-filter-btn");
+  const cards = document.querySelectorAll<HTMLElement>(".project-card");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter;
+
+      // Update active button state
+      filterBtns.forEach((b) => {
+        b.classList.remove("bg-[var(--sec)]", "text-white", "shadow-md");
+        b.classList.add("text-gray-400");
+      });
+      btn.classList.add("bg-[var(--sec)]", "text-white", "shadow-md");
+      btn.classList.remove("text-gray-400");
+
+      // Filter cards
+      cards.forEach((card) => {
+        const category = card.dataset.category;
+        if (filter === "all" || category === filter) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
