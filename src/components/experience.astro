@@ -12,7 +12,7 @@ interface WorkExperience {
 const experiences: WorkExperience[] = [
   {
     period: "Hozirgi vaqtda",
-    role: "Dasturlash yo‘nalishida o‘qituvchi",
+    role: "Dasturlash yo‘nalishida IT o‘qituvchi",
     company: "Rich Boss xususiy maktabi",
     location: "Guliston shahri, O‘zbekiston",
     type: "Asosiy faoliyat",
@@ -59,78 +59,87 @@ const experiences: WorkExperience[] = [
     type: "Ishlab chiqarish tajribasi",
     desc: "Sanoat texnikasi bilan ishlash, yuqori mas'uliyat, diqqat va jamoaviy mehnat intizomini shakllantirish tajribasi.",
   },
-  {
-    period: "2024-yil 5–14-dekabr",
-    role: "Yordamchi ishchi",
-    company: "Fermer xo‘jaligidagi faoliyat",
-    location: "Sirdaryo viloyati",
-    type: "Jismoniy mehnat tajribasi",
-    desc: "Turli muhitlarda ishlashga tayyorlik, sabr-toqat, har qanday mehnat sharoitiga tez moslashish va mas'uliyatni his qilish.",
-  },
 ];
 ---
 
-<section id="experience" class="py-16 sm:py-24 border-t border-white/10 text-[var(--white)]">
-  <div class="space-y-12">
+<section id="experience" class="py-16 sm:py-24 border-t border-orange-500/15 text-white relative">
+  <div class="space-y-10">
     
     <!-- Section Header -->
-    <div class="space-y-3">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--sec)]/10 text-[var(--sec)] text-xs font-semibold tracking-wider uppercase">
-        <span>Mehnat faoliyati</span>
+    <div class="space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-400 text-xs font-semibold">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
+          <path fill-rule="evenodd" d="M6 3.75A2.75 2.75 0 018.75 1h2.5A2.75 2.75 0 0114 3.75v.443c.572.055 1.14.122 1.706.2C17.053 4.582 18 5.75 18 7.07v3.469c0 1.126-.694 2.191-1.83 2.54-1.952.599-4.024.921-6.17.921s-4.219-.322-6.17-.921C2.694 12.73 2 11.665 2 10.539V7.07c0-1.321.947-2.489 2.294-2.676A41.047 41.047 0 016 4.193V3.75zm1.5 0V4.14c.83-.04 1.667-.06 2.5-.06s1.67.02 2.5.06V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25zM10 15.25a25.26 25.26 0 01-6.526-.853.75.75 0 00-.474 1.423A26.758 26.758 0 0010 16.75a26.758 26.758 0 007-.93.75.75 0 00-.474-1.423A25.26 25.26 0 0110 15.25z" clip-rule="evenodd" />
+        </svg>
+        <span>Ish tajribasi</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-        Tajriba va Xronologiya
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+        Mehnat faoliyati va tajribalarim
       </h2>
-      <p class="text-base text-gray-400 max-w-2xl">
-        Rasmiy mehnat faoliyati ma’lumotnomasi asosida shakllantirilgan ish joylari, davrlar va pedagogik-muhandislik bosqichlari.
+      <p class="text-sm sm:text-base text-slate-400 max-w-2xl">
+        Dasturlash, pedagogik mahorat hamda apparat muhandisligi yo‘nalishidagi amaliy faoliyatim.
       </p>
     </div>
 
-    <!-- Timeline Container -->
-    <div class="relative border-l-2 border-white/10 ml-4 sm:ml-8 space-y-8">
+    <!-- Timeline Grid -->
+    <div class="relative pl-6 sm:pl-8 border-l border-orange-500/25 space-y-8 my-6">
       {
         experiences.map((exp) => (
-          <div class="relative pl-6 sm:pl-10 group">
+          <div class="relative group">
             
-            <!-- Timeline Dot -->
-            <div class={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-              exp.isCurrent
-                ? "bg-emerald-400 border-[#0d0f14] shadow-lg shadow-emerald-400/50 scale-125"
-                : "bg-[var(--sec)] border-[#0d0f14] group-hover:scale-125"
-            }`}>
-              {exp.isCurrent && (
-                <span class="animate-ping absolute inset-0 rounded-full bg-emerald-400 opacity-75"></span>
+            <!-- Timeline Node Indicator -->
+            <div class="absolute -left-[31px] sm:-left-[39px] top-2 flex items-center justify-center">
+              {exp.isCurrent ? (
+                <div class="relative flex items-center justify-center w-5 h-5">
+                  <span class="absolute w-5 h-5 rounded-full bg-orange-500/30 animate-ping"></span>
+                  <span class="w-3 h-3 rounded-full bg-orange-500 shadow-[0_0_12px_#ff6b00]"></span>
+                </div>
+              ) : (
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80 group-hover:scale-125 transition-transform group-hover:bg-orange-400 shadow-[0_0_8px_rgba(255,184,0,0.6)]"></span>
               )}
             </div>
 
-            <!-- Card -->
-            <div class="glass-card p-6 sm:p-7 rounded-2xl space-y-3 hover:border-white/20">
-              <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="text-xs sm:text-sm font-semibold text-[var(--sec)]">
-                  {exp.period}
-                </span>
-                <span class={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${
-                  exp.isCurrent
-                    ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                    : "bg-white/5 text-gray-400 border-white/10"
-                }`}>
-                  {exp.type}
-                </span>
+            <!-- Experience Card -->
+            <div class={`p-5 sm:p-6 rounded-2xl bg-[#07070b]/90 border border-orange-500/20 hover:border-orange-500/50 space-y-3 transition-all duration-300 ${
+              exp.isCurrent ? "border-orange-500/40 shadow-[0_0_25px_rgba(255,107,0,0.12)]" : ""
+            }`}>
+              
+              <!-- Meta Header -->
+              <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-300 font-semibold">{exp.period}</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-300 font-medium">
+                    {exp.type}
+                  </span>
+                  {exp.isCurrent && (
+                    <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-semibold flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      Hozirgi faoliyat
+                    </span>
+                  )}
+                </div>
               </div>
 
-              <div>
-                <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-[var(--sec)] transition-colors">
+              <!-- Main Info -->
+              <div class="space-y-1">
+                <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-orange-400 transition-colors">
                   {exp.role}
                 </h3>
-                <p class="text-sm font-medium text-gray-300">
-                  {exp.company} <span class="text-gray-500">• {exp.location}</span>
+                <p class="text-xs sm:text-sm text-slate-300">
+                  <strong class="text-amber-300 font-semibold">{exp.company}</strong> &middot; <span class="text-slate-400">{exp.location}</span>
                 </p>
               </div>
 
-              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed pt-1">
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans pt-2 border-t border-orange-500/15">
                 {exp.desc}
               </p>
+
             </div>
+
           </div>
         ))
       }

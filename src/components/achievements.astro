@@ -2,128 +2,153 @@
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const goals = [
-  "Zamonaviy va foydalanuvchiga qulay veb-ilovalar yaratish",
-  "Telegram botlar orqali ta'lim va biznes jarayonlarini avtomatlashtirish",
-  "Ta’lim muassasalari uchun raqamli boshqaruv yechimlarini ishlab chiqish",
-  "O‘quvchilarni dasturlashga qiziqtirish va ularning mustaqil bilimini rivojlantirish",
-  "Algoritmik fikrlash va texnik ko‘nikmalarni xalqaro darajada chuqurlashtirish",
-  "Jamoaviy IT loyihalari va xalqaro dasturlash musobaqalarida faol qatnashish",
+  "Zamonaviy va yuqori darajada optimallashgan veb-ilovalar ishlab chiqish",
+  "Telegram botlar orqali ta'lim va biznes jarayonlarini to‘liq avtomatlashtirish",
+  "Ta’lim muassasalari uchun raqamli boshqaruv platformalarini barpo etish",
+  "O‘quvchilarni real dasturlash loyihalariga qiziqtirish va yetuk kadrlar tayyorlash",
+  "Algoritmik va apparat tizimlarini chuqur tadqiq etish",
+  "Xalqaro xakatonlar va jamoaviy dasturlash musobaqalarida yuqori natijalar ko‘rsatish",
 ];
 ---
 
-<section id="achievements" class="py-16 sm:py-24 border-t border-white/10 text-[var(--white)]">
-  <div class="space-y-12">
+<section id="achievements" class="py-16 sm:py-24 border-t border-orange-500/15 text-white relative">
+  <div class="space-y-10">
     
     <!-- Section Header -->
-    <div class="space-y-3">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--sec)]/10 text-[var(--sec)] text-xs font-semibold tracking-wider uppercase">
-        <span>Yutuqlar & Maqsadlar</span>
+    <div class="space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-400 text-xs font-semibold">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
+          <path fill-rule="evenodd" d="M10 1c-1.828 0-3.623.149-5.371.435a.75.75 0 00-.629.74v1.066c0 .493.18.966.505 1.332l1.986 2.234a4.5 4.5 0 002.32 1.458A6.002 6.002 0 009.25 12.87v1.88H7.75a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-1.5v-1.88a6.002 6.002 0 00.41-4.605 4.5 4.5 0 002.32-1.458l1.986-2.234c.325-.366.505-.839.505-1.332V2.175a.75.75 0 00-.629-.74A38.257 38.257 0 0010 1zm-4.5 3.327V2.55c1.477-.202 2.977-.31 4.5-.31s3.023.108 4.5.31v.777c0 .164-.06.322-.168.444l-1.986 2.234a3 3 0 01-2.346 1.055 3 3 0 01-2.346-1.055L5.668 3.771a.602.602 0 01-.168-.444z" clip-rule="evenodd" />
+        </svg>
+        <span>Yutuqlar va marralar</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-        Tanlovlar va Kasbiy Marralar
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+        Tanlovlar va natijalar
       </h2>
-      <p class="text-base text-gray-400 max-w-2xl">
-        Sun'iy intellekt xakatonlari, algoritmik musobaqalar va kelajakdagi IT-ta'lim strategiyasi.
+      <p class="text-sm sm:text-base text-slate-400 max-w-2xl">
+        Sun'iy intellekt xakatonlari, algoritmik tahlillar va kelajakdagi kasbiy maqsadlarim.
       </p>
     </div>
 
-    <!-- Featured Achievement Hero Card: AI Hackathon 2nd Place -->
-    <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121622] p-6 sm:p-10 shadow-2xl group">
-      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[var(--sec)]/15 rounded-full blur-3xl pointer-events-none group-hover:bg-[var(--sec)]/25 transition-all"></div>
+    <!-- Featured AI Hackathon Award Card -->
+    <div class="p-6 sm:p-8 rounded-2xl bg-[#08080d]/95 border border-amber-400/30 shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_30px_rgba(255,184,0,0.12)] relative overflow-hidden group">
+      
+      <!-- Ambient Warm Gold Backlight -->
+      <div class="absolute -top-32 -right-32 w-80 h-80 bg-[radial-gradient(circle,_rgba(255,184,0,0.2)_0%,_transparent_70%)] blur-3xl pointer-events-none"></div>
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
         
-        <!-- Image / Trophy -->
-        <div class="lg:col-span-5 overflow-hidden rounded-2xl border border-white/15 bg-black/40">
+        <!-- Award Image -->
+        <div class="lg:col-span-5 overflow-hidden rounded-xl border border-amber-400/30 bg-black/60 shadow-lg relative group">
           <img
             src={`${baseUrl}/images/hackathon_award.jpg`}
             alt="AI Hackathon 2nd Place Blitz GDPI"
-            class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+            class="w-full h-64 sm:h-72 object-cover filter contrast-110 group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3 left-3 text-xs text-amber-300 font-semibold px-3 py-1 rounded-full bg-black/80 border border-amber-400/30 flex items-center gap-1.5 backdrop-blur-sm">
+            <span>GDPI &middot; Blitz jamoasi</span>
+          </div>
         </div>
 
         <!-- Award Details -->
         <div class="lg:col-span-7 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
-            🏆 2-O‘rin Sovrindori • 2026-yil
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/35 text-amber-300 text-xs font-bold tracking-wide shadow-[0_0_12px_rgba(255,184,0,0.2)]">
+            <span>🏆 2-O‘RIN SOVRINDORI</span>
+            <span class="text-slate-500">&middot;</span>
+            <span class="text-white">AI HACKATHON</span>
           </div>
           
-          <h3 class="text-2xl sm:text-3xl font-bold text-white leading-tight">
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight font-sans">
             Sun’iy Intellekt Xakatoni Sovrindori
           </h3>
           
-          <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
-            Guliston davlat pedagogika instituti (GDPI) nomidan tuzilgan <strong class="text-white">Blitz</strong> jamoasi tarkibida nufuzli sun’iy intellekt xakatonida <strong class="text-amber-400">ikkinchi o‘rinni</strong> qo‘lga kiritganman.
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
+            Guliston davlat pedagogika instituti nomidan tuzilgan <strong class="text-amber-300">Blitz</strong> jamoasi tarkibida nufuzli sun’iy intellekt xakatonida <strong class="text-white bg-orange-500/20 px-2 py-0.5 rounded border border-orange-500/30">2-o‘rinni</strong> qo‘lga kiritganman.
           </p>
 
-          <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
-            Ushbu musobaqa jamoaviy ishlash, innovatsion g‘oyalarni tezkor dasturiy prototipga aylantirish, sun'iy intellekt modellarini amaliyotga tatbiq etish va yangi texnologiyalarni chuqur o‘rganishga bo‘lgan ishtiyoqimni yanada yuksaltirdi.
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-sans">
+            Ushbu musobaqada sun'iy intellekt algoritmlarini amaliyotga tezkor integratsiya qilish, ma'lumotlar tahlili va jamoaviy dasturiy prototip yaratish tajribasi to‘liq mustahkamlandi.
           </p>
 
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="text-xs px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300">#AIHackathon</span>
-            <span class="text-xs px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300">#BlitzJamoasi</span>
-            <span class="text-xs px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300">#GDPI</span>
-            <span class="text-xs px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-gray-300">#ArtificialIntelligence</span>
+          <div class="flex flex-wrap gap-2 pt-2 text-xs">
+            <span class="px-3 py-1 rounded-full bg-[#0d0d14] border border-amber-400/30 text-amber-300">
+              AI Hackathon
+            </span>
+            <span class="px-3 py-1 rounded-full bg-[#0d0d14] border border-orange-500/30 text-orange-400">
+              Blitz jamoasi
+            </span>
+            <span class="px-3 py-1 rounded-full bg-[#0d0d14] border border-orange-500/20 text-slate-300">
+              GDPI
+            </span>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Two-column: Algorithmic Programming & Career Goals -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- 2 Columns: Algorithmic Programming & Professional Goals -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       
-      <!-- Algorithmic Programming -->
-      <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4">
-        <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center font-bold">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-            <path d="M12 2a2 2 0 0 1 2 2v2h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4V4a2 2 0 0 1 2-2zm-2 6H6v10h12V8h-4v2h-4V8zm2-4v2h0V4z"/>
-          </svg>
+      <!-- Algorithmic Programming Card -->
+      <div class="p-6 sm:p-7 rounded-2xl bg-[#07070b]/90 border border-orange-500/20 hover:border-orange-500/40 transition-all space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-orange-500/15">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM7.28 7.72a.75.75 0 010 1.06l-2 2a.75.75 0 01-1.06-1.06l2-2a.75.75 0 011.06 0zm5.44 1.06a.75.75 0 011.06-1.06l2 2a.75.75 0 01-1.06 1.06l-2-2zM9.25 13.5a.75.75 0 01.75-.75h.01a.75.75 0 010 1.5H10a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-white">
+              Algoritmik dasturlash (ICPC & Robokontest)
+            </h3>
+          </div>
         </div>
 
-        <h3 class="text-xl font-bold text-white">
-          Algoritmik Dasturlash (ICPC & Robokontest)
-        </h3>
-
-        <p class="text-sm text-gray-300 leading-relaxed">
-          Algoritmik fikrlash va dasturlash masalalarini optimallashgan yechimlar bilan hal etish doimiy qiziqishimdir. <strong class="text-white">ICPC</strong> hamda milliy <strong class="text-cyan-400">Robokontest</strong> kabi musobaqalardagi algoritmik masalalarni tahlil qilish, murakkablik darajasi (Time/Space Complexity) past bo‘lgan yechimlar ishlab chiqish ustida ishlayman.
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+          Algoritmik fikrlash va dasturlash masalalarini optimallashgan yechimlar bilan hal etish doimiy yo‘nalishimdir. <strong class="text-white">ICPC</strong> hamda milliy <strong class="text-amber-300">Robokontest</strong> musobaqalaridagi masalalarni murakkablik darajasi past bo‘lgan yechimlar bilan tahlil qilaman.
         </p>
 
-        <ul class="space-y-2 text-xs sm:text-sm text-gray-400 pt-2 border-t border-white/10">
-          <li class="flex items-center gap-2">
-            <span class="text-cyan-400 font-bold">✓</span> Mantiqiy tahlil va optimal algoritmlar
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-cyan-400 font-bold">✓</span> Ma'lumotlar tuzilmalari va rekursiya
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-cyan-400 font-bold">✓</span> O‘quvchilarda algoritmik poydevorni shakllantirish
-          </li>
-        </ul>
+        <div class="space-y-2.5 pt-2 border-t border-orange-500/15 text-xs text-slate-300">
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-xs flex-shrink-0">✓</span>
+            <span>Optimal ma'lumotlar tuzilmalari (Trees, Graphs, Hash Maps)</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-xs flex-shrink-0">✓</span>
+            <span>Dinamik dasturlash va rekursiv algoritmlar</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-xs flex-shrink-0">✓</span>
+            <span>O‘quvchilarda algoritmik poydevorni shakllantirish</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Professional Future Goals -->
-      <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4">
-        <div class="w-12 h-12 rounded-2xl bg-[var(--sec)]/15 text-[var(--sec)] flex items-center justify-center font-bold">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
+      <!-- Professional Future Goals Card -->
+      <div class="p-6 sm:p-7 rounded-2xl bg-[#07070b]/90 border border-orange-500/20 hover:border-orange-500/40 transition-all space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-orange-500/15">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.25a.75.75 0 00-1.5 0v4.59L7.3 9.24a.75.75 0 00-1.1 1.02l3.25 3.5a.75.75 0 001.1 0l3.25-3.5a.75.75 0 10-1.1-1.02l-1.95 2.1V6.75z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-white">
+              Kelajakdagi kasbiy maqsadlarim
+            </h3>
+          </div>
         </div>
 
-        <h3 class="text-xl font-bold text-white">
-          Kelajakdagi Kasbiy Maqsadlarim
-        </h3>
-
-        <div class="space-y-2.5 pt-1">
+        <div class="space-y-2.5 pt-1 text-xs text-slate-300">
           {
             goals.map((goal, idx) => (
-              <div class="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300">
-                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-white/5 text-[var(--sec)] flex items-center justify-center text-[10px] font-bold mt-0.5">
+              <div class="flex items-start gap-2.5">
+                <span class="w-5 h-5 rounded-full bg-orange-500/15 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold text-[11px] flex-shrink-0 mt-0.5">
                   {idx + 1}
                 </span>
-                <span>{goal}</span>
+                <span class="text-xs text-slate-200 leading-relaxed">{goal}</span>
               </div>
             ))
           }

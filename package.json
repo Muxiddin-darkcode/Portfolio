@@ -5,9 +5,9 @@
   "packageManager": "pnpm@11.2.2",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "astro dev",
-    "start": "node server.js",
-    "serve": "node server.js",
+    "dev": "node dev-server.mjs",
+    "start": "astro preview",
+    "serve": "astro preview",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"

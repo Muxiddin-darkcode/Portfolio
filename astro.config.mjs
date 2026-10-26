@@ -24,7 +24,7 @@ export default defineConfig({
     inlineStylesheets: "auto",
   },
   server: {
-    host: true,
+    host: true, // Listen on all network addresses (0.0.0.0) so phone on same Wi-Fi can connect
     port: 4321,
   },
 });

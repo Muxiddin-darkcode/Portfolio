@@ -127,145 +127,151 @@ const projects: Project[] = [
 ];
 ---
 
-<section id="projects" class="py-16 sm:py-24 border-t border-white/10 text-[var(--white)]">
+<section id="projects" class="py-16 sm:py-24 border-t border-orange-500/15 text-white relative">
   <div class="space-y-10">
     
-    <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <div class="space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--sec)]/10 text-[var(--sec)] text-xs font-semibold tracking-wider uppercase">
-          <span>Portfoliom</span>
+    <!-- Clean Section Header & Responsive Filter Bar -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-400 text-xs font-semibold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-orange-400"></span>
+          <span>Amaliy ishlar</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
           Loyihalarim
         </h2>
-        <p class="text-base text-gray-400 max-w-xl">
-          Amaliy veb-sahifalar, Telegram botlar, axborot platformalari va rejalashtirilgan innovatsion g‘oyalar to‘plami.
+        <p class="text-sm sm:text-base text-slate-400 max-w-xl">
+          Amaliy veb-portallar, asinxron Telegram botlar va IT ta'lim platformalari.
         </p>
       </div>
 
-      <!-- Filter Buttons -->
-      <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-white/[0.03] border border-white/10 w-fit">
+      <!-- Human, Clean Filter Tabs (Scrollable on Mobile, No Awkward Wrap) -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 no-scrollbar w-full sm:w-auto flex-nowrap">
         <button
+          class="project-filter-btn px-4 py-2 rounded-xl border border-orange-500 bg-orange-500 text-stone-950 font-bold text-xs sm:text-sm shadow-md shadow-orange-500/30 transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
           data-filter="all"
-          class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 bg-[var(--sec)] text-white shadow-md shadow-[var(--sec)]/20"
         >
           Barchasi (11)
         </button>
         <button
+          class="project-filter-btn px-4 py-2 rounded-xl border border-orange-500/20 bg-[#09090f] text-slate-300 hover:text-white hover:border-orange-500/50 text-xs sm:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
           data-filter="Tayyor"
-          class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 text-gray-400 hover:text-white"
         >
-          Tayyor (4)
+          Tayyor loyihalar (4)
         </button>
         <button
+          class="project-filter-btn px-4 py-2 rounded-xl border border-orange-500/20 bg-[#09090f] text-slate-300 hover:text-white hover:border-orange-500/50 text-xs sm:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
           data-filter="Jarayonda"
-          class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 text-gray-400 hover:text-white"
         >
           Jarayonda (3)
         </button>
         <button
+          class="project-filter-btn px-4 py-2 rounded-xl border border-orange-500/20 bg-[#09090f] text-slate-300 hover:text-white hover:border-orange-500/50 text-xs sm:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
           data-filter="G‘oya"
-          class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 text-gray-400 hover:text-white"
         >
-          G‘oya (4)
+          G‘oyalar (4)
         </button>
       </div>
     </div>
 
-    <!-- Projects Grid -->
-    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+    <!-- Projects Grid (Clean Luxury Glass Cards) -->
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
-        projects.map((project) => {
-          const statusBadge =
-            project.category === "Tayyor"
-              ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
-              : project.category === "Jarayonda"
-              ? "bg-amber-500/15 text-amber-400 border-amber-500/30"
-              : "bg-purple-500/15 text-purple-300 border-purple-500/30";
+        projects.map((project) => (
+          <div
+            class="project-card cyber-card rounded-2xl overflow-hidden flex flex-col justify-between bg-[#08080e]/90 border-orange-500/20 group hover:border-orange-500/50 transition-all shadow-lg"
+            data-category={project.category}
+          >
+            <!-- Card Image -->
+            <div class="relative h-44 overflow-hidden border-b border-orange-500/15">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#08080e] via-transparent to-black/30"></div>
+              
+              <!-- Top Category Badge -->
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-xs">
+                <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md border border-orange-500/30 text-amber-300 font-semibold text-[11px]">
+                  {project.type}
+                </span>
+                
+                {project.category === "Tayyor" && (
+                  <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 backdrop-blur-md border border-emerald-500/40 text-emerald-300 font-bold text-[11px] flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Tayyor
+                  </span>
+                )}
+                {project.category === "Jarayonda" && (
+                  <span class="px-2.5 py-1 rounded-lg bg-orange-500/20 backdrop-blur-md border border-orange-500/40 text-orange-300 font-bold text-[11px] flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse"></span>
+                    Jarayonda
+                  </span>
+                )}
+                {project.category === "G‘oya" && (
+                  <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 backdrop-blur-md border border-amber-500/40 text-amber-300 font-bold text-[11px]">
+                    G‘oya
+                  </span>
+                )}
+              </div>
+            </div>
 
-          return (
-            <div
-              class="project-card group glass-card rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
-              data-category={project.category}
-            >
-              <div>
-                <!-- Image Header -->
-                <div class="relative h-48 sm:h-52 overflow-hidden bg-[#161a26]">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-[#121622] via-[#121622]/40 to-transparent"></div>
-                  
-                  <!-- Status and Type Badges -->
-                  <div class="absolute top-3 left-3 flex items-center gap-2">
-                    <span class={`text-[11px] font-bold px-2.5 py-1 rounded-full border ${statusBadge}`}>
-                      ● {project.category}
-                    </span>
-                    <span class="text-[11px] font-medium px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-gray-300 border border-white/10">
-                      {project.type}
-                    </span>
-                  </div>
-                </div>
-
-                <!-- Content Body -->
-                <div class="p-5 sm:p-6 space-y-3">
-                  <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-[var(--sec)] transition-colors">
-                    {project.title}
-                  </h3>
-                  <p class="text-xs sm:text-sm text-gray-400 leading-relaxed line-clamp-3">
-                    {project.desc}
-                  </p>
-                </div>
+            <!-- Card Content -->
+            <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                  {project.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                  {project.desc}
+                </p>
               </div>
 
-              <!-- Footer with Tags and Links -->
-              <div class="p-5 sm:p-6 pt-0 space-y-4">
-                <div class="flex flex-wrap gap-1.5">
+              <!-- Tech Tags & Action Link -->
+              <div class="space-y-3 pt-3 border-t border-orange-500/15">
+                <div class="flex flex-wrap gap-1.5 text-[11px]">
                   {project.tags.map((tag) => (
-                    <span class="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/5 text-gray-400 font-mono">
-                      #{tag}
+                    <span class="px-2.5 py-0.5 rounded-md bg-[#0e0e16] border border-orange-500/15 text-slate-300 font-medium">
+                      {tag}
                     </span>
                   ))}
                 </div>
 
-                <div class="pt-3 border-t border-white/5 flex items-center justify-between">
-                  <span class="text-xs text-gray-500 font-medium">
-                    {project.category === "Tayyor" ? "Amalda qo‘llanilgan" : project.category === "Jarayonda" ? "Ishlab chiqilmoqda" : "Konseptual reja"}
-                  </span>
-                  
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-300 hover:text-white transition-colors group/link"
-                    >
-                      <span>GitHub</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">
-                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-between w-full p-2.5 rounded-xl bg-[#0e0e16] border border-orange-500/20 hover:border-orange-500/60 hover:bg-orange-500/10 text-xs font-semibold text-orange-300 hover:text-white transition-all"
+                  >
+                    <span class="flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5">
+                        <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"/>
                       </svg>
-                    </a>
-                  )}
-                </div>
+                      <span>GitHub'da ko‘rish</span>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                      <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                )}
               </div>
             </div>
-          );
-        })
+          </div>
+        ))
       }
     </div>
 
     <!-- GitHub Profile Banner -->
-    <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-white/[0.03] via-white/[0.05] to-transparent border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="cyber-card p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-orange-500/10 via-[#08080e] to-amber-500/10 border-orange-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="space-y-1 text-center sm:text-left">
-        <h4 class="text-lg font-bold text-white">
-          Boshqa kodlar va ishlanmalarim bilan tanishing
-        </h4>
-        <p class="text-xs sm:text-sm text-gray-400">
-          GitHub profillarim: <strong class="text-white">Muxiddin-darkcode</strong> hamda brend loyiham <strong class="text-[var(--sec)]">INFOGENIUZ</strong>
+        <h3 class="text-base sm:text-lg font-bold text-white">
+          Barcha repozitoriylar va ochiq kodli loyihalar
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-400">
+          GitHub profilimda yangi loyihalar va kodlar bazasi bilan tanishing.
         </p>
       </div>
 
@@ -273,9 +279,9 @@ const projects: Project[] = [
         href="https://github.com/Muxiddin-darkcode"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs sm:text-sm font-semibold transition-all hover:scale-105"
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-stone-950 font-bold text-xs sm:text-sm shadow-md shadow-orange-500/25 hover:scale-105 transition-all whitespace-nowrap"
       >
-        <span>GitHub profili</span>
+        <span>GitHub Profil</span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
           <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"/>
         </svg>
@@ -289,17 +295,20 @@ const projects: Project[] = [
   const filterBtns = document.querySelectorAll<HTMLButtonElement>(".project-filter-btn");
   const cards = document.querySelectorAll<HTMLElement>(".project-card");
 
+  const activeClasses = ["bg-orange-500", "text-stone-950", "border-orange-500", "shadow-md"];
+  const inactiveClasses = ["bg-[#09090f]", "text-slate-300", "border-orange-500/20", "hover:border-orange-500/50", "hover:text-white"];
+
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const filter = btn.dataset.filter;
 
       // Update active button state
       filterBtns.forEach((b) => {
-        b.classList.remove("bg-[var(--sec)]", "text-white", "shadow-md");
-        b.classList.add("text-gray-400");
+        b.classList.remove(...activeClasses);
+        b.classList.add(...inactiveClasses);
       });
-      btn.classList.add("bg-[var(--sec)]", "text-white", "shadow-md");
-      btn.classList.remove("text-gray-400");
+      btn.classList.add(...activeClasses);
+      btn.classList.remove(...inactiveClasses);
 
       // Filter cards
       cards.forEach((card) => {

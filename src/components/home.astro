@@ -4,68 +4,68 @@ import LogoWall from "../components/logoWall.astro";
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<section id="home" class="pt-28 sm:pt-36 pb-12 sm:pb-16 text-[var(--white)]">
+<section id="home" class="pt-24 sm:pt-32 pb-12 sm:pb-16 text-white relative">
   <div class="space-y-12">
     <!-- Hero Main Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       
       <!-- Left Content Column -->
-      <div class="lg:col-span-7 space-y-6 text-left">
+      <div class="lg:col-span-7 space-y-5 text-left">
         
-        <!-- Human Professional Header Intro -->
-        <div class="space-y-3">
-          <div class="flex items-center gap-2.5 text-xs font-semibold tracking-wider uppercase text-[var(--sec)]">
-            <span class="w-6 h-[2px] bg-[var(--sec)]"></span>
-            <span>IT Mutaxassisi &middot; Sirdaryo, Guliston</span>
-          </div>
+        <!-- Role Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-xs font-semibold text-orange-400 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+          <span>Full-Stack Web & Telegram Bot Dasturchisi</span>
+        </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+        <!-- Hero Headline -->
+        <div class="space-y-2">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
             Shamsiddinov <br class="hidden sm:inline" />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-200 to-cyan-300">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-300 drop-shadow-[0_4px_25px_rgba(249,115,22,0.35)]">
               Muxiddin
             </span>
           </h1>
-
-          <p class="text-lg sm:text-2xl font-bold text-gray-200">
-            Web & Telegram Bot Dasturchisi &middot; <span class="text-[var(--sec)] font-semibold">IT Pedagog</span>
+          <p class="text-base sm:text-xl font-bold text-slate-200">
+            Full-Stack Dasturchi &middot; <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 font-extrabold">IT Pedagog</span>
           </p>
         </div>
 
-        <!-- Professional Description (Authentic & Human) -->
-        <p class="text-sm sm:text-base text-gray-300 max-w-xl leading-relaxed">
-          Guliston shahridagi <strong class="text-white font-semibold">Rich Boss xususiy maktabida</strong> bo‘lajak dasturchilarga dars beraman. Veb-dasturlash, <span class="text-cyan-300 font-medium">Aiogram 3</span> asosida Telegram botlar yaratish va ta’limni raqamlashtirish bilan professional tarzda shug‘ullanaman.
+        <!-- Description -->
+        <p class="text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed">
+          Zamonaviy veb-platformalar, ma'lumotlar bazasi integratsiyalari va <strong class="text-orange-400 font-semibold">Aiogram 3</strong> asosidagi asinxron Telegram botlar yaratishga ixtisoslashgan dasturchiman. Guliston shahridagi <strong class="text-white font-semibold">Rich Boss</strong> xususiy maktabida yoshlarga dasturlash va axborot texnologiyalaridan saboq beraman.
         </p>
 
-        <!-- Creed / Personal Principle -->
-        <div class="p-4 rounded-xl bg-white/[0.03] border-l-2 border-[var(--sec)] border border-white/5 text-xs sm:text-sm text-gray-300 italic">
-          "Mening tamoyilim: o‘rganish, yaratish, o‘rgatish va texnologiyalar yordamida real muammolarga yechim topish."
-        </div>
+        <!-- Action Buttons & Socials (Fully Responsive on Mobile) -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+          <div class="flex items-center gap-2.5">
+            <a
+              href="#projects"
+              class="flex-1 sm:flex-none px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 hover:from-orange-600 hover:to-amber-600 text-stone-950 font-bold text-xs sm:text-sm text-center shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2"
+            >
+              <span>Loyihalarni ko‘rish</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+              </svg>
+            </a>
 
-        <!-- Action Buttons -->
-        <div class="flex flex-wrap items-center gap-3 pt-2">
-          <a
-            href="#projects"
-            class="px-6 py-3 rounded-xl bg-gradient-to-r from-[var(--sec)] to-[#6366f1] text-white font-medium text-xs sm:text-sm shadow-lg shadow-[var(--sec)]/20 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
-          >
-            Loyihalarni ko‘rish
-          </a>
-
-          <a
-            href="#contact"
-            class="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all duration-200"
-          >
-            Bog‘lanish
-          </a>
+            <a
+              href="#contact"
+              class="flex-1 sm:flex-none px-5 py-3 rounded-xl bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/25 hover:border-orange-400 text-white font-semibold text-xs sm:text-sm text-center hover:scale-105 active:scale-95 transition-all duration-200"
+            >
+              Bog‘lanish
+            </a>
+          </div>
 
           <!-- Social Links -->
-          <div class="flex items-center gap-2 ml-1">
+          <div class="flex items-center justify-center sm:justify-start gap-2 pt-1 sm:pt-0">
             <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/Muxiddin-darkcode"
-              aria-label="GitHub profili"
-              title="GitHub: Muxiddin-darkcode"
-              class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 hover:border-[var(--sec)]/40 transition-all duration-200"
+              aria-label="GitHub"
+              title="GitHub"
+              class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#0e0e14] border border-orange-500/20 text-slate-300 hover:text-orange-400 hover:border-orange-400/50 hover:bg-orange-500/10 transition-all"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                 <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"/>
@@ -76,8 +76,8 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
               rel="noopener noreferrer"
               href="https://t.me/developer_muxiddin"
               aria-label="Telegram"
-              title="Telegram: @developer_muxiddin"
-              class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 hover:border-[#38bdf8]/40 transition-all duration-200"
+              title="Telegram"
+              class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#0e0e14] border border-orange-500/20 text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 hover:bg-cyan-500/10 transition-all"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.19-.04.35z"/>
@@ -88,8 +88,8 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
               rel="noopener noreferrer"
               href="https://instagram.com/aurev.uz"
               aria-label="Instagram"
-              title="Instagram: @aurev.uz"
-              class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 hover:border-pink-500/40 transition-all duration-200"
+              title="Instagram"
+              class="w-10 h-10 flex items-center justify-center rounded-xl bg-[#0e0e14] border border-orange-500/20 text-slate-300 hover:text-pink-400 hover:border-pink-400/50 hover:bg-pink-500/10 transition-all"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -99,52 +99,70 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
         </div>
 
         <!-- Clean Key Facts Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10">
-          <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
-            <span class="block text-xl font-bold text-white">10+</span>
-            <span class="text-xs text-gray-400">Loyiha & Botlar</span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-3 border-t border-orange-500/15">
+          <div class="p-3 sm:p-3.5 rounded-xl bg-[#09090f]/90 border border-orange-500/15 hover:border-orange-500/35 transition-all">
+            <span class="block text-lg sm:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">10+</span>
+            <span class="text-xs text-slate-400 font-medium">Loyiha & Botlar</span>
           </div>
-          <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
-            <span class="block text-xl font-bold text-[var(--sec)]">4-kurs</span>
-            <span class="text-xs text-gray-400">GDPI Aniq Fanlar</span>
+          <div class="p-3 sm:p-3.5 rounded-xl bg-[#09090f]/90 border border-orange-500/15 hover:border-orange-500/35 transition-all">
+            <span class="block text-lg sm:text-2xl font-extrabold text-amber-300">2-o‘rin 🏆</span>
+            <span class="text-xs text-slate-400 font-medium">AI Xakaton Sovrini</span>
           </div>
-          <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
-            <span class="block text-xl font-bold text-emerald-400">2-o‘rin</span>
-            <span class="text-xs text-gray-400">AI Xakaton Sovrini</span>
+          <div class="p-3 sm:p-3.5 rounded-xl bg-[#09090f]/90 border border-orange-500/15 hover:border-orange-500/35 transition-all">
+            <span class="block text-lg sm:text-2xl font-extrabold text-white">4-kurs</span>
+            <span class="text-xs text-slate-400 font-medium">GDPI Aniq Fanlar</span>
           </div>
-          <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
-            <span class="block text-xl font-bold text-cyan-400">B2</span>
-            <span class="text-xs text-gray-400">Turk tili darajasi</span>
+          <div class="p-3 sm:p-3.5 rounded-xl bg-[#09090f]/90 border border-orange-500/15 hover:border-orange-500/35 transition-all">
+            <span class="block text-lg sm:text-2xl font-extrabold text-orange-400">Rich Boss</span>
+            <span class="text-xs text-slate-400 font-medium">IT Pedagog</span>
           </div>
         </div>
       </div>
 
-      <!-- Right Visual Column (Clean High-End Portrait Card) -->
-      <div class="lg:col-span-5 flex flex-col items-center justify-center">
-        <div class="relative group w-full max-w-sm">
+      <!-- Right Visual Column: Modern IT & Full-Stack Developer Showcase with Matrix Rain -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-center w-full">
+        <div class="relative group w-full max-w-sm sm:max-w-md">
           
-          <!-- Subtle ambient glow -->
-          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-[var(--sec)]/40 via-indigo-500/20 to-cyan-400/30 opacity-50 blur-xl group-hover:opacity-75 transition duration-500"></div>
+          <!-- Subtle warm ambient backlight -->
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-orange-500/30 via-amber-500/20 to-yellow-400/20 opacity-40 blur-2xl group-hover:opacity-60 transition duration-500"></div>
           
-          <!-- Main Photo Container -->
-          <div class="relative overflow-hidden rounded-3xl border border-white/15 bg-[#10141f] p-3 shadow-2xl">
-            <img
-              src={`${baseUrl}/images/avatar.jpg`}
-              alt="Shamsiddinov Muxiddin Xusniddin o‘g‘li"
-              class="w-full h-80 sm:h-96 object-cover object-top rounded-2xl group-hover:scale-[1.02] transition-transform duration-500"
-              loading="eager"
-            />
+          <!-- High-Tech Developer Showcase Card -->
+          <div class="relative overflow-hidden rounded-3xl border border-orange-500/25 bg-[#09090e]/95 p-3.5 sm:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(249,115,22,0.12)]">
             
-            <!-- Bottom Info Strip -->
-            <div class="mt-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-between">
-              <div>
-                <p class="text-xs font-bold text-white">Muxiddin Shamsiddinov</p>
-                <p class="text-[11px] text-gray-400">Rich Boss Maktabi &middot; Guliston</p>
+            <!-- Window Title Bar -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-orange-500/15 px-1">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
               </div>
-              <span class="text-[10px] px-2.5 py-1 rounded-md bg-[var(--sec)]/15 border border-[var(--sec)]/30 text-[var(--sec)] font-mono font-semibold">
-                INFOGENIUZ
+              <span class="text-[11px] font-mono text-slate-400 font-medium">workspace.matrix</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-semibold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Online
               </span>
             </div>
+
+            <!-- Pure Matrix Code Animation Canvas -->
+            <div
+              id="matrix-container"
+              style="min-height: 360px; height: 360px;"
+              class="relative w-full h-[360px] min-h-[360px] overflow-hidden rounded-2xl border border-orange-500/30 bg-[#050508] shadow-[0_0_30px_rgba(255,107,0,0.2)] select-none"
+            >
+              <canvas id="hero-matrix-canvas" class="absolute inset-0 block w-full h-full cursor-crosshair"></canvas>
+            </div>
+
+            <!-- Bottom Developer Summary Info -->
+            <div class="mt-3 p-3 rounded-xl bg-[#0f0f16] border border-orange-500/15 flex items-center justify-between">
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-white">Full-Stack Arxitektura</p>
+                <p class="text-[11px] text-slate-400 font-mono">Python &middot; React &middot; SQLite &middot; Fast APIs</p>
+              </div>
+              <span class="text-[10px] px-2.5 py-1 rounded-lg bg-orange-500/15 border border-orange-500/30 text-amber-300 font-bold tracking-wide">
+                ACTIVE
+              </span>
+            </div>
+
           </div>
 
         </div>
@@ -152,12 +170,151 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 
     </div>
 
-    <!-- Technology Ticker / LogoWall -->
-    <div class="pt-6 border-t border-white/10">
-      <p class="text-xs uppercase tracking-widest text-center text-gray-400 mb-2 font-medium">
+    <!-- Tech Stack Ticker -->
+    <div class="pt-6 border-t border-orange-500/15">
+      <p class="text-xs uppercase tracking-widest text-center text-slate-400 mb-2 font-medium">
         Ishlatiladigan asosiy texnologiyalar va vositalar
       </p>
       <LogoWall />
     </div>
   </div>
 </section>
+
+<!-- Rock-Solid Native Matrix Rain Canvas Animation Script -->
+<script is:inline>
+  (function initMatrix() {
+    const canvas = document.getElementById("hero-matrix-canvas");
+    const container = document.getElementById("matrix-container");
+    if (!canvas || !container) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let width = 0;
+    let height = 0;
+    let animationId = null;
+    let isFast = false;
+
+    // Characters: Katakana, Numbers, Code Tokens, Full-Stack tokens
+    const characters =
+      "ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ0123456789{}<>=/*+-$#@;:%&|PythonAiogramReactFastAPISQLite";
+    const charArray = characters.split("");
+    const fontSize = 14;
+
+    let columns = 0;
+    let drops = [];
+    let speeds = [];
+    let dropLengths = [];
+
+    let mouseX = -1000;
+    let mouseY = -1000;
+
+    function resize() {
+      const rect = container.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+      width = rect.width || 360;
+      height = rect.height || 350;
+
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      columns = Math.max(1, Math.floor(width / fontSize));
+      drops = [];
+      speeds = [];
+      dropLengths = [];
+
+      for (let i = 0; i < columns; i++) {
+        drops[i] = Math.floor(Math.random() * -50);
+        speeds[i] = 0.5 + Math.random() * 0.9;
+        dropLengths[i] = 12 + Math.floor(Math.random() * 22);
+      }
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+
+    container.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+
+    container.addEventListener("mouseleave", () => {
+      mouseX = -1000;
+      mouseY = -1000;
+    });
+
+    let lastTime = performance.now();
+
+    function render(time) {
+      animationId = requestAnimationFrame(render);
+      if (time - lastTime < 33) return; // ~30 fps smooth cinematic pace
+      lastTime = time;
+
+      // Dark translucent wash to create smooth persistence trails
+      ctx.fillStyle = "rgba(5, 5, 8, 0.14)";
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.font = "bold 13px 'JetBrains Mono', monospace";
+      ctx.textBaseline = "top";
+
+      for (let i = 0; i < drops.length; i++) {
+        const x = i * fontSize;
+        const currentDropY = drops[i];
+        const y = currentDropY * fontSize;
+        const char = charArray[Math.floor(Math.random() * charArray.length)];
+
+        const dist = Math.hypot(x - mouseX, y - mouseY);
+        const isNear = dist < 65;
+
+        // Leading Head Droplet
+        if (isNear) {
+          ctx.fillStyle = "#ffffff";
+          ctx.shadowColor = "#ffb800";
+          ctx.shadowBlur = 15;
+          ctx.fillText(char, x, y);
+        } else {
+          ctx.fillStyle = "#fff7ed";
+          ctx.shadowColor = "#ffb800";
+          ctx.shadowBlur = 8;
+          ctx.fillText(char, x, y);
+        }
+        ctx.shadowBlur = 0;
+
+        // Trailing Stream
+        const len = dropLengths[i];
+        for (let j = 1; j <= len; j++) {
+          const trailY = (currentDropY - j) * fontSize;
+          if (trailY < 0 || trailY > height) continue;
+          const trailChar = charArray[(Math.floor(Math.random() * charArray.length) + j) % charArray.length];
+          const alpha = Math.max(0, 1 - j / len);
+
+          if (j < 3) {
+            ctx.fillStyle = "rgba(255, 184, 0, " + (alpha * 0.95) + ")";
+          } else if (j < 8) {
+            ctx.fillStyle = "rgba(255, 107, 0, " + (alpha * 0.85) + ")";
+          } else {
+            ctx.fillStyle = "rgba(180, 83, 9, " + (alpha * 0.55) + ")";
+          }
+          ctx.fillText(trailChar, x, trailY);
+        }
+
+        // Advance drop
+        drops[i] += speeds[i] * (isNear ? 2.2 : 1);
+
+        if (drops[i] * fontSize > height && Math.random() > 0.96) {
+          drops[i] = Math.floor(Math.random() * -15);
+          speeds[i] = 0.5 + Math.random() * 0.9;
+          dropLengths[i] = 12 + Math.floor(Math.random() * 22);
+        }
+      }
+    }
+
+    render(performance.now());
+  })();
+</script>
