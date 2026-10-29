@@ -1,16 +1,15 @@
 ---
 import LogoWall from "../components/logoWall.astro";
-
-const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+import TechGallery3D from "../components/TechGallery3D.astro";
 ---
 
 <section id="home" class="pt-24 sm:pt-32 pb-12 sm:pb-16 text-white relative">
   <div class="space-y-12">
     <!-- Hero Main Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
       
       <!-- Left Content Column -->
-      <div class="lg:col-span-7 space-y-5 text-left">
+      <div class="lg:col-span-6 space-y-5 text-left">
         
         <!-- Role Badge -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-xs font-semibold text-orange-400 shadow-sm">
@@ -119,53 +118,9 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
         </div>
       </div>
 
-      <!-- Right Visual Column: Modern IT & Full-Stack Developer Showcase with Matrix Rain -->
-      <div class="lg:col-span-5 flex flex-col items-center justify-center w-full">
-        <div class="relative group w-full max-w-sm sm:max-w-md">
-          
-          <!-- Subtle warm ambient backlight -->
-          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-orange-500/30 via-amber-500/20 to-yellow-400/20 opacity-40 blur-2xl group-hover:opacity-60 transition duration-500"></div>
-          
-          <!-- High-Tech Developer Showcase Card -->
-          <div class="relative overflow-hidden rounded-3xl border border-orange-500/25 bg-[#09090e]/95 p-3.5 sm:p-4 shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(249,115,22,0.12)]">
-            
-            <!-- Window Title Bar -->
-            <div class="flex items-center justify-between pb-3 mb-3 border-b border-orange-500/15 px-1">
-              <div class="flex items-center gap-1.5">
-                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-              </div>
-              <span class="text-[11px] font-mono text-slate-400 font-medium">workspace.matrix</span>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-semibold flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Online
-              </span>
-            </div>
-
-            <!-- Pure Matrix Code Animation Canvas -->
-            <div
-              id="matrix-container"
-              style="min-height: 360px; height: 360px;"
-              class="relative w-full h-[360px] min-h-[360px] overflow-hidden rounded-2xl border border-orange-500/30 bg-[#050508] shadow-[0_0_30px_rgba(255,107,0,0.2)] select-none"
-            >
-              <canvas id="hero-matrix-canvas" class="absolute inset-0 block w-full h-full cursor-crosshair"></canvas>
-            </div>
-
-            <!-- Bottom Developer Summary Info -->
-            <div class="mt-3 p-3 rounded-xl bg-[#0f0f16] border border-orange-500/15 flex items-center justify-between">
-              <div>
-                <p class="text-xs sm:text-sm font-bold text-white">Full-Stack Arxitektura</p>
-                <p class="text-[11px] text-slate-400 font-mono">Python &middot; React &middot; SQLite &middot; Fast APIs</p>
-              </div>
-              <span class="text-[10px] px-2.5 py-1 rounded-lg bg-orange-500/15 border border-orange-500/30 text-amber-300 font-bold tracking-wide">
-                ACTIVE
-              </span>
-            </div>
-
-          </div>
-
-        </div>
+      <!-- Right Visual Column: Motion Dev 3D Tech Gallery (Helix, Barrel, Ring, Sphere) -->
+      <div class="lg:col-span-6 flex flex-col items-center justify-center w-full overflow-visible">
+        <TechGallery3D />
       </div>
 
     </div>
@@ -179,142 +134,3 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
     </div>
   </div>
 </section>
-
-<!-- Rock-Solid Native Matrix Rain Canvas Animation Script -->
-<script is:inline>
-  (function initMatrix() {
-    const canvas = document.getElementById("hero-matrix-canvas");
-    const container = document.getElementById("matrix-container");
-    if (!canvas || !container) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let width = 0;
-    let height = 0;
-    let animationId = null;
-    let isFast = false;
-
-    // Characters: Katakana, Numbers, Code Tokens, Full-Stack tokens
-    const characters =
-      "ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ0123456789{}<>=/*+-$#@;:%&|PythonAiogramReactFastAPISQLite";
-    const charArray = characters.split("");
-    const fontSize = 14;
-
-    let columns = 0;
-    let drops = [];
-    let speeds = [];
-    let dropLengths = [];
-
-    let mouseX = -1000;
-    let mouseY = -1000;
-
-    function resize() {
-      const rect = container.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-      width = rect.width || 360;
-      height = rect.height || 350;
-
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      canvas.style.width = width + "px";
-      canvas.style.height = height + "px";
-
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      columns = Math.max(1, Math.floor(width / fontSize));
-      drops = [];
-      speeds = [];
-      dropLengths = [];
-
-      for (let i = 0; i < columns; i++) {
-        drops[i] = Math.floor(Math.random() * -50);
-        speeds[i] = 0.5 + Math.random() * 0.9;
-        dropLengths[i] = 12 + Math.floor(Math.random() * 22);
-      }
-    }
-
-    resize();
-    window.addEventListener("resize", resize);
-
-    container.addEventListener("mousemove", (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-    });
-
-    container.addEventListener("mouseleave", () => {
-      mouseX = -1000;
-      mouseY = -1000;
-    });
-
-    let lastTime = performance.now();
-
-    function render(time) {
-      animationId = requestAnimationFrame(render);
-      if (time - lastTime < 33) return; // ~30 fps smooth cinematic pace
-      lastTime = time;
-
-      // Dark translucent wash to create smooth persistence trails
-      ctx.fillStyle = "rgba(5, 5, 8, 0.14)";
-      ctx.fillRect(0, 0, width, height);
-
-      ctx.font = "bold 13px 'JetBrains Mono', monospace";
-      ctx.textBaseline = "top";
-
-      for (let i = 0; i < drops.length; i++) {
-        const x = i * fontSize;
-        const currentDropY = drops[i];
-        const y = currentDropY * fontSize;
-        const char = charArray[Math.floor(Math.random() * charArray.length)];
-
-        const dist = Math.hypot(x - mouseX, y - mouseY);
-        const isNear = dist < 65;
-
-        // Leading Head Droplet
-        if (isNear) {
-          ctx.fillStyle = "#ffffff";
-          ctx.shadowColor = "#ffb800";
-          ctx.shadowBlur = 15;
-          ctx.fillText(char, x, y);
-        } else {
-          ctx.fillStyle = "#fff7ed";
-          ctx.shadowColor = "#ffb800";
-          ctx.shadowBlur = 8;
-          ctx.fillText(char, x, y);
-        }
-        ctx.shadowBlur = 0;
-
-        // Trailing Stream
-        const len = dropLengths[i];
-        for (let j = 1; j <= len; j++) {
-          const trailY = (currentDropY - j) * fontSize;
-          if (trailY < 0 || trailY > height) continue;
-          const trailChar = charArray[(Math.floor(Math.random() * charArray.length) + j) % charArray.length];
-          const alpha = Math.max(0, 1 - j / len);
-
-          if (j < 3) {
-            ctx.fillStyle = "rgba(255, 184, 0, " + (alpha * 0.95) + ")";
-          } else if (j < 8) {
-            ctx.fillStyle = "rgba(255, 107, 0, " + (alpha * 0.85) + ")";
-          } else {
-            ctx.fillStyle = "rgba(180, 83, 9, " + (alpha * 0.55) + ")";
-          }
-          ctx.fillText(trailChar, x, trailY);
-        }
-
-        // Advance drop
-        drops[i] += speeds[i] * (isNear ? 2.2 : 1);
-
-        if (drops[i] * fontSize > height && Math.random() > 0.96) {
-          drops[i] = Math.floor(Math.random() * -15);
-          speeds[i] = 0.5 + Math.random() * 0.9;
-          dropLengths[i] = 12 + Math.floor(Math.random() * 22);
-        }
-      }
-    }
-
-    render(performance.now());
-  })();
-</script>
