@@ -1,0 +1,52 @@
+---
+interface Props {
+  animation: "developer" | "trophy" | "scroll";
+  width?: string;
+  height?: string;
+  className?: string;
+}
+
+const {
+  animation = "developer",
+  width = "64px",
+  height = "64px",
+  className = "",
+} = Astro.props;
+
+const containerId = `lottie-${animation}-${Math.random().toString(36).substring(2, 8)}`;
+---
+
+<div
+  id={containerId}
+  class={`lottie-container inline-flex items-center justify-center pointer-events-none select-none ${className}`}
+  style={`width: ${width}; height: ${height};`}
+  data-anim-type={animation}
+></div>
+
+<script>
+  import lottie from "lottie-web";
+  import { developerLottie, trophyLottie, scrollLottie } from "../scripts/lottieData";
+
+  const animMap = {
+    developer: developerLottie,
+    trophy: trophyLottie,
+    scroll: scrollLottie,
+  };
+
+  document.querySelectorAll<HTMLElement>(".lottie-container").forEach((container) => {
+    if (container.dataset.initialized) return;
+    const type = container.getAttribute("data-anim-type") as keyof typeof animMap;
+    const animData = animMap[type];
+
+    if (animData) {
+      lottie.loadAnimation({
+        container: container,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: animData,
+      });
+      container.dataset.initialized = "true";
+    }
+  });
+</script>

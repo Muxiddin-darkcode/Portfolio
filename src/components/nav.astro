@@ -25,7 +25,7 @@ const navItems: NavItem[] = [
     class="pointer-events-auto flex items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-2.5 rounded-2xl border border-orange-500/25 bg-[#09090d]/90 backdrop-blur-2xl shadow-[0_12px_36px_rgba(0,0,0,0.85),0_0_20px_rgba(249,115,22,0.12)] transition-all duration-300 w-full max-w-5xl"
   >
     <!-- Brand Logo -->
-    <a href="#home" class="flex items-center gap-2.5 text-white font-bold tracking-tight flex-shrink-0 group">
+    <a href="#home" class="magnetic-item flex items-center gap-2.5 text-white font-bold tracking-tight flex-shrink-0 group">
       <div class="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden ring-2 ring-orange-500/50 group-hover:ring-orange-400 shadow-[0_0_12px_rgba(249,115,22,0.35)] group-hover:scale-105 transition-all">
         <img
           src={`${baseUrl}/images/profile.jpg`}
@@ -46,7 +46,7 @@ const navItems: NavItem[] = [
         navItems.map((item) => (
           <a
             href={item.href}
-            class="nav-link group flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-orange-500/15 hover:border-orange-500/30 border border-transparent transition-all duration-200 whitespace-nowrap"
+            class="nav-link magnetic-item group flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-orange-500/15 hover:border-orange-500/30 border border-transparent transition-all duration-200 whitespace-nowrap"
           >
             {item.icon === "home" && (
               <svg class="w-3.5 h-3.5 text-orange-400/80 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -108,7 +108,7 @@ const navItems: NavItem[] = [
         href="https://t.me/developer_muxiddin"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-stone-950 font-bold text-xs sm:text-xs shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 active:scale-95 transition-all duration-200 whitespace-nowrap"
+        class="magnetic-btn btn-shine inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-stone-950 font-bold text-xs sm:text-xs shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 active:scale-95 transition-all duration-200 whitespace-nowrap"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.19-.04.35z"/>
@@ -120,7 +120,7 @@ const navItems: NavItem[] = [
       <button
         id="mobile-menu-btn"
         aria-label="Menyu"
-        class="md:hidden p-2 rounded-xl text-slate-300 hover:text-orange-400 hover:bg-orange-500/10 border border-orange-500/25 focus:outline-none transition-colors"
+        class="magnetic-item md:hidden p-2 rounded-xl text-slate-300 hover:text-orange-400 hover:bg-orange-500/10 border border-orange-500/25 focus:outline-none transition-colors"
       >
         <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />

@@ -65,8 +65,8 @@ const experiences: WorkExperience[] = [
 <section id="experience" class="py-16 sm:py-24 border-t border-orange-500/15 text-white relative">
   <div class="space-y-10">
     
-    <!-- Section Header -->
-    <div class="space-y-2">
+    <!-- Section Header (GSAP Reveal) -->
+    <div class="space-y-2 section-header">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-400 text-xs font-semibold">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5">
           <path fill-rule="evenodd" d="M6 3.75A2.75 2.75 0 018.75 1h2.5A2.75 2.75 0 0114 3.75v.443c.572.055 1.14.122 1.706.2C17.053 4.582 18 5.75 18 7.07v3.469c0 1.126-.694 2.191-1.83 2.54-1.952.599-4.024.921-6.17.921s-4.219-.322-6.17-.921C2.694 12.73 2 11.665 2 10.539V7.07c0-1.321.947-2.489 2.294-2.676A41.047 41.047 0 016 4.193V3.75zm1.5 0V4.14c.83-.04 1.667-.06 2.5-.06s1.67.02 2.5.06V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25zM10 15.25a25.26 25.26 0 01-6.526-.853.75.75 0 00-.474 1.423A26.758 26.758 0 0010 16.75a26.758 26.758 0 007-.93.75.75 0 00-.474-1.423A25.26 25.26 0 0110 15.25z" clip-rule="evenodd" />
@@ -81,7 +81,7 @@ const experiences: WorkExperience[] = [
       </p>
     </div>
 
-    <!-- Timeline Grid -->
+    <!-- Timeline Grid (GSAP Staggered Cards) -->
     <div class="relative pl-6 sm:pl-8 border-l border-orange-500/25 space-y-8 my-6">
       {
         experiences.map((exp) => (
@@ -99,8 +99,8 @@ const experiences: WorkExperience[] = [
               )}
             </div>
 
-            <!-- Experience Card -->
-            <div class={`p-5 sm:p-6 rounded-2xl bg-[#07070b]/90 border border-orange-500/20 hover:border-orange-500/50 space-y-3 transition-all duration-300 ${
+            <!-- Experience Card (Reveal & Tilt) -->
+            <div class={`reveal-card tilt-card p-5 sm:p-6 rounded-2xl bg-[#07070b]/90 border border-orange-500/20 hover:border-orange-500/50 space-y-3 transition-all duration-300 ${
               exp.isCurrent ? "border-orange-500/40 shadow-[0_0_25px_rgba(255,107,0,0.12)]" : ""
             }`}>
               
