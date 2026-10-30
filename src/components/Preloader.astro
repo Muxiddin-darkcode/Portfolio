@@ -1,106 +1,142 @@
 ---
-// Editorial Linear / Apple Style Split-Curtain Preloader
-// Kinetic Typography ("SALOM • HELLO • CREATING • MUXIDDIN.DEV") + Dual-Shutter Reveal
+// Hyper-Dynamic Cyber Core & Holographic Warp Preloader
+// Interactive Particle Nebula + 3D Gyro Rings + Audio Visualizer + Hyperspace Warp Reveal
 ---
 
-<div id="preloader-wrapper" class="fixed inset-0 z-[99999] select-none pointer-events-auto">
+<div id="preloader-wrapper" class="fixed inset-0 z-[99999] select-none pointer-events-auto bg-[#030305] overflow-hidden">
   
-  <!-- Top Shutter Curtain -->
+  <!-- Interactive Particle Nebula Canvas (Reacts to cursor & warps at 100%) -->
+  <canvas id="preloader-particle-canvas" class="absolute inset-0 z-0 w-full h-full pointer-events-none"></canvas>
+
+  <!-- Top Shutter Panel (Split Curtain) -->
   <div
     id="preloader-shutter-top"
-    class="absolute top-0 left-0 right-0 h-1/2 bg-[#040407] z-10 flex flex-col justify-end overflow-hidden border-b border-orange-500/20"
+    class="absolute top-0 left-0 right-0 h-1/2 bg-[#040407]/95 backdrop-blur-3xl z-10 flex flex-col justify-end overflow-hidden border-b border-orange-500/25"
   >
-    <!-- Ambient Warm Aura in Top Shutter -->
-    <div class="absolute -bottom-36 left-1/2 -translate-x-1/2 w-[650px] h-[300px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.18)_0%,transparent_70%)] blur-3xl pointer-events-none"></div>
-    <!-- Glowing Laser Line on Split Seam -->
-    <div class="relative w-full h-[1.5px] bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_15px_rgba(251,191,36,0.9)]"></div>
+    <!-- Ambient Radial Nebula -->
+    <div class="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.22)_0%,transparent_70%)] blur-3xl pointer-events-none"></div>
+    <!-- Intense Split Seam Laser -->
+    <div class="relative w-full h-[2px] bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_20px_rgba(251,191,36,1)]"></div>
   </div>
 
-  <!-- Bottom Shutter Curtain -->
+  <!-- Bottom Shutter Panel (Split Curtain) -->
   <div
     id="preloader-shutter-bottom"
-    class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#040407] z-10 flex flex-col justify-start overflow-hidden border-t border-orange-500/20"
+    class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#040407]/95 backdrop-blur-3xl z-10 flex flex-col justify-start overflow-hidden border-t border-orange-500/25"
   >
-    <!-- Glowing Laser Line on Split Seam -->
-    <div class="relative w-full h-[1.5px] bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_15px_rgba(251,191,36,0.9)]"></div>
-    <!-- Ambient Warm Aura in Bottom Shutter -->
-    <div class="absolute -top-36 left-1/2 -translate-x-1/2 w-[650px] h-[300px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.14)_0%,transparent_70%)] blur-3xl pointer-events-none"></div>
+    <!-- Intense Split Seam Laser -->
+    <div class="relative w-full h-[2px] bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_20px_rgba(251,191,36,1)]"></div>
+    <!-- Ambient Radial Nebula -->
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.18)_0%,transparent_70%)] blur-3xl pointer-events-none"></div>
   </div>
 
-  <!-- Center Stage Container (Floating above Shutters) -->
+  <!-- Center Stage (Holographic Gyro Core + Kinetic Energy) -->
   <div
     id="preloader-center"
     class="fixed inset-0 z-20 flex flex-col items-center justify-center px-4 pointer-events-none"
   >
-    <!-- Background Soft Ambient Breathing Orb -->
-    <div class="absolute w-[460px] h-[460px] rounded-full bg-[radial-gradient(circle,rgba(249,115,22,0.15)_0%,rgba(245,158,11,0.05)_45%,transparent_70%)] blur-3xl pointer-events-none"></div>
+    
+    <!-- Shockwave Flash Ring (Fires on 100% Warp) -->
+    <div id="warp-shockwave" class="absolute w-24 h-24 rounded-full border-2 border-amber-300 pointer-events-none opacity-0 -z-10 shadow-[0_0_40px_rgba(251,191,36,0.9)]"></div>
 
-    <!-- Editorial Pill Badge -->
-    <div class="relative z-10 mb-6 sm:mb-8 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-orange-500/30 backdrop-blur-xl shadow-[0_0_20px_rgba(249,115,22,0.15)]">
-      <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_#f59e0b]"></span>
-      <span class="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-300">
-        SHAMSIDDINOV MUXIDDIN &bull; 2026
-      </span>
+    <!-- 3D Gyroscopic Holographic Core -->
+    <div class="relative w-36 h-36 sm:w-44 sm:h-44 mb-4 flex items-center justify-center [perspective:800px]">
+      
+      <!-- Outer Glowing Rotating Orbit Ring 1 -->
+      <div class="gyro-ring-1 absolute inset-0 rounded-full border border-dashed border-orange-500/50 shadow-[0_0_25px_rgba(249,115,22,0.35)]"></div>
+      
+      <!-- Middle Tilted 3D Orbit Ring 2 -->
+      <div class="gyro-ring-2 absolute inset-3 rounded-full border border-amber-400/40 shadow-[0_0_20px_rgba(245,158,11,0.3)]"></div>
+
+      <!-- Inner High-Speed Counter Ring 3 -->
+      <div class="gyro-ring-3 absolute inset-7 rounded-full border border-orange-400/30"></div>
+
+      <!-- Central Holographic Energy Orb with Monogram -->
+      <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-tr from-[#0a0a12] via-[#141422] to-[#1c1c30] border border-orange-500/50 shadow-[0_0_35px_rgba(249,115,22,0.5),inset_0_0_20px_rgba(245,158,11,0.25)] flex flex-col items-center justify-center overflow-hidden">
+        
+        <!-- Glowing Sweeping Scanner Beam -->
+        <div class="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-transparent via-amber-400/25 to-transparent animate-scan pointer-events-none"></div>
+        
+        <!-- Brand Mark Icon -->
+        <span class="font-extrabold text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-tr from-white via-amber-200 to-orange-400 font-mono tracking-tighter drop-shadow-[0_2px_12px_rgba(251,191,36,0.5)]">
+          &lt;M/&gt;
+        </span>
+        <span class="text-[8.5px] font-mono uppercase tracking-widest text-orange-400 font-bold -mt-0.5">
+          SYSTEM ON
+        </span>
+      </div>
+
+      <!-- Orbital Planet Nodes -->
+      <span class="orbit-node-1 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-amber-300 shadow-[0_0_12px_#f59e0b]"></span>
+      <span class="orbit-node-2 absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2.5 h-2.5 rounded-full bg-orange-400 shadow-[0_0_12px_#ff6b00]"></span>
     </div>
 
-    <!-- Kinetic Word Greeting Carousel (Apple Style Masked Stagger) -->
-    <div class="relative z-10 h-16 sm:h-20 md:h-24 w-full max-w-xl flex items-center justify-center overflow-hidden">
+    <!-- Kinetic Word Greeting (Dynamic Fast Stagger) -->
+    <div class="relative h-14 sm:h-16 md:h-20 w-full max-w-lg flex items-center justify-center overflow-hidden">
       
       <!-- Word 1: SALOM -->
-      <div
-        class="kinetic-word absolute inset-0 flex items-center justify-center text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-amber-200/90 drop-shadow-[0_4px_30px_rgba(255,184,0,0.3)] opacity-0 translate-y-12"
-      >
+      <div class="kinetic-word absolute inset-0 flex items-center justify-center text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-amber-200 drop-shadow-[0_4px_25px_rgba(255,184,0,0.4)] opacity-0 translate-y-10">
         <span>SALOM</span>
         <span class="text-orange-500 ml-1">.</span>
       </div>
 
       <!-- Word 2: HELLO -->
-      <div
-        class="kinetic-word absolute inset-0 flex items-center justify-center text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-amber-200/90 drop-shadow-[0_4px_30px_rgba(255,184,0,0.3)] opacity-0 translate-y-12"
-      >
+      <div class="kinetic-word absolute inset-0 flex items-center justify-center text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-amber-200 drop-shadow-[0_4px_25px_rgba(255,184,0,0.4)] opacity-0 translate-y-10">
         <span>HELLO</span>
         <span class="text-amber-400 ml-1">.</span>
       </div>
 
-      <!-- Word 3: CREATING -->
-      <div
-        class="kinetic-word absolute inset-0 flex items-center justify-center text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-orange-300 drop-shadow-[0_4px_30px_rgba(255,107,0,0.3)] opacity-0 translate-y-12"
-      >
-        <span>CREATING</span>
-        <span class="text-orange-400 ml-1">...</span>
+      <!-- Word 3: FULLSTACK -->
+      <div class="kinetic-word absolute inset-0 flex items-center justify-center text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-orange-300 drop-shadow-[0_4px_25px_rgba(255,107,0,0.4)] opacity-0 translate-y-10">
+        <span>FULLSTACK</span>
+        <span class="text-orange-400 ml-1">&bull;</span>
       </div>
 
       <!-- Word 4: MUXIDDIN.DEV -->
-      <div
-        class="kinetic-word absolute inset-0 flex items-center justify-center text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-sans opacity-0 translate-y-12"
-      >
-        <span class="text-white drop-shadow-[0_4px_30px_rgba(255,255,255,0.3)]">Muxiddin</span>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300 font-extrabold drop-shadow-[0_4px_25px_rgba(249,115,22,0.4)]">.dev</span>
+      <div class="kinetic-word absolute inset-0 flex items-center justify-center text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-sans opacity-0 translate-y-10">
+        <span class="text-white drop-shadow-[0_4px_30px_rgba(255,255,255,0.4)]">Muxiddin</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300 font-extrabold drop-shadow-[0_4px_25px_rgba(249,115,22,0.5)]">.dev</span>
       </div>
 
     </div>
 
-    <!-- Minimal Editorial Laser Progress Line -->
-    <div class="relative z-10 w-64 sm:w-80 h-[2px] bg-white/[0.08] rounded-full overflow-hidden mt-6 sm:mt-8 shadow-[inset_0_1px_3px_rgba(0,0,0,0.8)]">
-      <div
-        id="preloader-laser-line"
-        class="absolute inset-y-0 left-0 bg-gradient-to-r from-orange-600 via-amber-400 to-yellow-200 shadow-[0_0_14px_rgba(251,191,36,0.9)] w-0"
-      ></div>
+    <!-- Audio-Frequency Kinetic Equalizer Bars -->
+    <div class="flex items-end justify-center gap-1 sm:gap-1.5 h-6 my-3">
+      {
+        Array.from({ length: 18 }).map((_, i) => (
+          <span
+            class="eq-bar w-1 rounded-full bg-gradient-to-t from-orange-600 via-amber-400 to-yellow-200 shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+            style={`height: ${6 + (i % 5) * 4}px;`}
+            data-index={i}
+          ></span>
+        ))
+      }
     </div>
 
-    <!-- Editorial Counter & Status Label -->
-    <div class="relative z-10 flex items-center justify-between w-64 sm:w-80 mt-3 font-mono text-xs">
-      <div class="flex items-center gap-1.5 text-slate-400">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-        <span id="preloader-status-sub" class="tracking-wider uppercase text-[10px] sm:text-[11px] text-slate-400 font-medium">
-          INITIALIZING
+    <!-- Laser Progress Track with Moving Plasma Glow -->
+    <div class="relative w-72 sm:w-88 h-[3px] bg-white/[0.08] rounded-full overflow-hidden shadow-[inset_0_1px_3px_rgba(0,0,0,0.8)]">
+      <div
+        id="preloader-laser-line"
+        class="absolute inset-y-0 left-0 bg-gradient-to-r from-orange-600 via-amber-400 to-yellow-200 shadow-[0_0_16px_rgba(251,191,36,1)] w-0"
+      >
+        <!-- Intense Glow Bead on Line Head -->
+        <span class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_12px_#ffffff]"></span>
+      </div>
+    </div>
+
+    <!-- Counter & Futuristic System Info -->
+    <div class="flex items-center justify-between w-72 sm:w-88 mt-3 font-mono text-xs">
+      <div class="flex items-center gap-2 text-slate-400">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span id="preloader-status-sub" class="tracking-widest uppercase text-[10px] sm:text-[11px] text-amber-300 font-bold">
+          WARP CHARGING...
         </span>
       </div>
       <div class="flex items-baseline gap-1 text-slate-400 font-bold">
-        <span id="preloader-counter-num" class="font-mono text-base sm:text-lg text-amber-300 font-extrabold">
+        <span id="preloader-counter-num" class="font-mono text-lg sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-orange-400 font-black">
           000
         </span>
-        <span class="text-[10px] text-orange-400/80 font-mono">/ 100</span>
+        <span class="text-[11px] text-orange-400 font-mono">%</span>
       </div>
     </div>
 
@@ -108,11 +144,48 @@
 
 </div>
 
-<!-- GSAP Driven Editorial Split Reveal Script -->
+<!-- CSS 3D Gyro Animations -->
+<style is:inline>
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+  .animate-scan {
+    animation: scanline 1.6s ease-in-out infinite;
+  }
+
+  .gyro-ring-1 {
+    transform: rotateX(65deg) rotateY(15deg);
+    animation: gyroSpin1 6s linear infinite;
+  }
+  .gyro-ring-2 {
+    transform: rotateX(25deg) rotateY(65deg);
+    animation: gyroSpin2 4.5s linear infinite reverse;
+  }
+  .gyro-ring-3 {
+    transform: rotateX(75deg) rotateZ(35deg);
+    animation: gyroSpin3 3s linear infinite;
+  }
+
+  @keyframes gyroSpin1 {
+    0% { transform: rotateX(65deg) rotateY(15deg) rotateZ(0deg); }
+    100% { transform: rotateX(65deg) rotateY(15deg) rotateZ(360deg); }
+  }
+  @keyframes gyroSpin2 {
+    0% { transform: rotateX(25deg) rotateY(65deg) rotateZ(0deg); }
+    100% { transform: rotateX(25deg) rotateY(65deg) rotateZ(360deg); }
+  }
+  @keyframes gyroSpin3 {
+    0% { transform: rotateX(75deg) rotateZ(35deg) rotateY(0deg); }
+    100% { transform: rotateX(75deg) rotateZ(35deg) rotateY(360deg); }
+  }
+</style>
+
+<!-- GSAP + Particle Nebula Engine Script -->
 <script>
   import gsap from "gsap";
 
-  function runEditorialPreloader() {
+  function runHyperDynamicPreloader() {
     const wrapper = document.getElementById("preloader-wrapper");
     const shutterTop = document.getElementById("preloader-shutter-top");
     const shutterBottom = document.getElementById("preloader-shutter-bottom");
@@ -120,30 +193,169 @@
     const laserLine = document.getElementById("preloader-laser-line");
     const counterNum = document.getElementById("preloader-counter-num");
     const statusSub = document.getElementById("preloader-status-sub");
+    const shockwave = document.getElementById("warp-shockwave");
     const words = document.querySelectorAll(".kinetic-word");
+    const eqBars = document.querySelectorAll<HTMLElement>(".eq-bar");
+    const canvas = document.getElementById("preloader-particle-canvas") as HTMLCanvasElement;
 
-    if (!wrapper || !shutterTop || !shutterBottom || !centerStage || words.length === 0) return;
+    if (!wrapper || !shutterTop || !shutterBottom || !centerStage) return;
 
     // Lock scrolling during preloader
     document.body.style.overflow = "hidden";
 
-    // Master GSAP Timeline
+    // ----------------------------------------------------
+    // 1. Interactive 3D Particle Nebula with Warp Accelerator
+    // ----------------------------------------------------
+    let isWarping = false;
+    let animFrameId: number;
+
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener("resize", () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      // Mouse interactive position
+      let mouseX = width / 2;
+      let mouseY = height / 2;
+      window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      interface Particle {
+        x: number;
+        y: number;
+        vx: number;
+        vy: number;
+        size: number;
+        color: string;
+        alpha: number;
+        angle: number;
+        dist: number;
+        speed: number;
+      }
+
+      const count = 90;
+      const particles: Particle[] = [];
+      const colors = ["#ff6b00", "#ffb800", "#f59e0b", "#38bdf8", "#ffffff"];
+
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: width / 2 + (Math.random() - 0.5) * width * 0.7,
+          y: height / 2 + (Math.random() - 0.5) * height * 0.7,
+          vx: (Math.random() - 0.5) * 1.5,
+          vy: (Math.random() - 0.5) * 1.5,
+          size: Math.random() * 2.2 + 0.8,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: Math.random() * 0.6 + 0.3,
+          angle: Math.random() * Math.PI * 2,
+          dist: Math.random() * (width / 2),
+          speed: Math.random() * 0.015 + 0.005,
+        });
+      }
+
+      function drawParticles() {
+        if (!ctx) return;
+        ctx.clearRect(0, 0, width, height);
+
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+
+          if (isWarping) {
+            // Hyperspace warp lines exploding from center!
+            const dx = p.x - centerX;
+            const dy = p.y - centerY;
+            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            p.x += (dx / dist) * 35;
+            p.y += (dy / dist) * 35;
+
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p.x - (dx / dist) * 45, p.y - (dy / dist) * 45);
+            ctx.strokeStyle = p.color;
+            ctx.lineWidth = p.size * 1.8;
+            ctx.globalAlpha = p.alpha;
+            ctx.stroke();
+          } else {
+            // Normal orbital celestial nebula swirl
+            p.angle += p.speed;
+            const targetX = centerX + Math.cos(p.angle) * p.dist;
+            const targetY = centerY + Math.sin(p.angle) * p.dist;
+
+            // Subtle mouse gravity attraction
+            p.x += (targetX - p.x) * 0.05 + (mouseX - centerX) * 0.001;
+            p.y += (targetY - p.y) * 0.05 + (mouseY - centerY) * 0.001;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.alpha;
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = p.color;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Connect nearby particles with subtle energy web
+            for (let j = i + 1; j < particles.length; j++) {
+              const p2 = particles[j];
+              const d = Math.hypot(p.x - p2.x, p.y - p2.y);
+              if (d < 85) {
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.strokeStyle = p.color;
+                ctx.globalAlpha = (1 - d / 85) * 0.22;
+                ctx.lineWidth = 0.6;
+                ctx.stroke();
+              }
+            }
+          }
+        }
+
+        ctx.globalAlpha = 1;
+        animFrameId = requestAnimationFrame(drawParticles);
+      }
+
+      drawParticles();
+    }
+
+    // ----------------------------------------------------
+    // 2. Audio-Spectrum Equalizer Bars Animation
+    // ----------------------------------------------------
+    let eqInterval = setInterval(() => {
+      eqBars.forEach((bar) => {
+        const randHeight = Math.floor(Math.random() * 20) + 4;
+        bar.style.height = `${randHeight}px`;
+      });
+    }, 75);
+
+    // ----------------------------------------------------
+    // 3. Master GSAP Cinematic Timeline
+    // ----------------------------------------------------
     const tl = gsap.timeline({
       defaults: { ease: "power3.out" },
       onComplete: () => {
-        // Unlock scroll
+        clearInterval(eqInterval);
+        cancelAnimationFrame(animFrameId);
         document.body.style.overflow = "";
         wrapper.style.display = "none";
-        // Dispatch completion event for hero reveal
         window.dispatchEvent(new CustomEvent("preloader:complete"));
       }
     });
 
-    // 1. Progress Counter & Laser Line Tween (0 -> 100 in ~2.0 seconds)
+    // A. Counter & Laser Line Tween (0 -> 100 in 2.1s)
     const counterObj = { val: 0 };
     tl.to(counterObj, {
       val: 100,
-      duration: 2.05,
+      duration: 2.15,
       ease: "power2.inOut",
       onUpdate: () => {
         const intVal = Math.floor(counterObj.val);
@@ -151,27 +363,24 @@
         if (counterNum) counterNum.textContent = formatted;
         if (laserLine) laserLine.style.width = `${counterObj.val}%`;
 
-        // Update subtle status subtitle
         if (statusSub) {
-          if (intVal < 30) statusSub.textContent = "INITIALIZING...";
-          else if (intVal < 70) statusSub.textContent = "LOADING MODULES...";
-          else if (intVal < 98) statusSub.textContent = "ALMOST READY...";
-          else statusSub.textContent = "WELCOME!";
+          if (intVal < 25) statusSub.textContent = "SYNCHRONIZING CORE...";
+          else if (intVal < 60) statusSub.textContent = "LAUNCHING 3D ENGINE...";
+          else if (intVal < 95) statusSub.textContent = "WARP DRIVE READY...";
+          else statusSub.textContent = "WARP JUMP!";
         }
       }
     }, 0);
 
-    // 2. Kinetic Words Sequence (Apple Style: Smooth Stagger Up & Out)
-    const wordDuration = 0.42;
-
+    // B. Kinetic Words Sequence
+    const wordDuration = 0.44;
     words.forEach((word, index) => {
-      const startTime = index * 0.45;
+      const startTime = index * 0.46;
       const isLast = index === words.length - 1;
 
-      // Animate In
       tl.fromTo(
         word,
-        { opacity: 0, y: 35, scale: 0.94, filter: "blur(4px)" },
+        { opacity: 0, y: 30, scale: 0.92, filter: "blur(6px)" },
         {
           opacity: 1,
           y: 0,
@@ -183,15 +392,14 @@
         startTime
       );
 
-      // Animate Out (unless it's the last word Muxiddin.dev)
       if (!isLast) {
         tl.to(
           word,
           {
             opacity: 0,
-            y: -35,
-            scale: 1.05,
-            filter: "blur(4px)",
+            y: -30,
+            scale: 1.08,
+            filter: "blur(6px)",
             duration: 0.32,
             ease: "power3.in",
           },
@@ -200,20 +408,34 @@
       }
     });
 
-    // 3. Center Stage Fade & Scale Out at 100%
+    // C. Warp Speed Shockwave Blast at 100%
+    tl.add(() => {
+      isWarping = true;
+    }, 2.12);
+
+    if (shockwave) {
+      tl.fromTo(
+        shockwave,
+        { scale: 0.5, opacity: 1, borderWidth: "5px" },
+        { scale: 28, opacity: 0, borderWidth: "0px", duration: 0.75, ease: "power2.out" },
+        2.15
+      );
+    }
+
+    // D. Center Core Zoom Out with Flare
     tl.to(
       centerStage,
       {
+        scale: 1.15,
         opacity: 0,
-        scale: 0.95,
-        filter: "blur(6px)",
-        duration: 0.38,
-        ease: "power2.in",
+        filter: "blur(10px) brightness(1.5)",
+        duration: 0.45,
+        ease: "power3.in",
       },
-      2.12
+      2.18
     );
 
-    // 4. Dual-Shutter Split Curtain Reveal (Apple / Linear Elite Exit)
+    // E. Dual-Shutter Split Curtain Explosive Snap
     tl.to(
       shutterTop,
       {
@@ -221,7 +443,7 @@
         duration: 0.85,
         ease: "power4.inOut",
       },
-      2.22
+      2.28
     );
 
     tl.to(
@@ -231,22 +453,21 @@
         duration: 0.85,
         ease: "power4.inOut",
       },
-      2.22
+      2.28
     );
 
-    // 5. Subtle Scale & Blur Reveal of Hero page
+    // F. Hero Page Dramatic Zoom Reveal
     tl.fromTo(
       "#main-nav, #home",
-      { scale: 0.98, opacity: 0.6 },
-      { scale: 1, opacity: 1, duration: 0.8, ease: "power3.out" },
+      { scale: 0.95, filter: "blur(6px)" },
+      { scale: 1, filter: "blur(0px)", duration: 0.85, ease: "power3.out" },
       2.35
     );
   }
 
-  // Initialize on DOM load
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", runEditorialPreloader);
+    document.addEventListener("DOMContentLoaded", runHyperDynamicPreloader);
   } else {
-    runEditorialPreloader();
+    runHyperDynamicPreloader();
   }
 </script>
