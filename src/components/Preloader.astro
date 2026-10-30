@@ -1,173 +1,252 @@
 ---
-// Preloader component for modern cyber/portfolio loading screen (2.3s)
+// Editorial Linear / Apple Style Split-Curtain Preloader
+// Kinetic Typography ("SALOM • HELLO • CREATING • MUXIDDIN.DEV") + Dual-Shutter Reveal
 ---
 
-<div
-  id="preloader-overlay"
-  class="fixed inset-0 z-[99999] bg-[#030306] flex flex-col items-center justify-center select-none overflow-hidden transition-all duration-700 ease-out"
-  aria-hidden="false"
->
-  <!-- Background High-Tech Atmospheric Glows -->
-  <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-orange-600/15 blur-[120px] pointer-events-none"></div>
-  <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-amber-500/15 blur-[120px] pointer-events-none"></div>
+<div id="preloader-wrapper" class="fixed inset-0 z-[99999] select-none pointer-events-auto">
   
-  <!-- Subtle Grid Pattern Background -->
-  <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,107,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,107,0,0.04)_1px,transparent_1px)] bg-[size:36px_36px] pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_90%)]"></div>
+  <!-- Top Shutter Curtain -->
+  <div
+    id="preloader-shutter-top"
+    class="absolute top-0 left-0 right-0 h-1/2 bg-[#040407] z-10 flex flex-col justify-end overflow-hidden border-b border-orange-500/20"
+  >
+    <!-- Ambient Warm Aura in Top Shutter -->
+    <div class="absolute -bottom-36 left-1/2 -translate-x-1/2 w-[650px] h-[300px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.18)_0%,transparent_70%)] blur-3xl pointer-events-none"></div>
+    <!-- Glowing Laser Line on Split Seam -->
+    <div class="relative w-full h-[1.5px] bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_15px_rgba(251,191,36,0.9)]"></div>
+  </div>
 
-  <!-- Centerpiece Container -->
-  <div class="relative z-10 flex flex-col items-center max-w-sm sm:max-w-md w-full px-6">
-    
-    <!-- Animated Cyber Hexagon Badge with Concentric Neon Rings -->
-    <div class="relative w-28 h-28 sm:w-32 sm:h-32 mb-8 flex items-center justify-center">
-      
-      <!-- Outer Rotating Segmented Neon Ring -->
-      <div class="absolute inset-0 rounded-full border-2 border-dashed border-orange-500/40 animate-spin [animation-duration:12s]"></div>
-      
-      <!-- Middle Reverse Pulsing Ring -->
-      <div class="absolute inset-2 rounded-full border border-amber-400/30 animate-spin [animation-duration:8s] [animation-direction:reverse]"></div>
-      
-      <!-- Inner Glowing Core Disc -->
-      <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-tr from-[#0a0a10] via-[#12121e] to-[#1c1c2e] border border-orange-500/40 shadow-[0_0_40px_rgba(255,107,0,0.35)] flex flex-col items-center justify-center overflow-hidden group">
-        
-        <!-- Glowing scanline beam -->
-        <div class="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-orange-400/20 to-transparent animate-pulse pointer-events-none"></div>
-        
-        <!-- Monogram -->
-        <span class="font-extrabold text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-tr from-white via-amber-200 to-orange-400 font-mono tracking-tighter">
-          SM
-        </span>
-        <span class="text-[9px] font-mono uppercase tracking-widest text-orange-400/80 font-bold -mt-0.5">
-          v2.0
-        </span>
-      </div>
+  <!-- Bottom Shutter Curtain -->
+  <div
+    id="preloader-shutter-bottom"
+    class="absolute bottom-0 left-0 right-0 h-1/2 bg-[#040407] z-10 flex flex-col justify-start overflow-hidden border-t border-orange-500/20"
+  >
+    <!-- Glowing Laser Line on Split Seam -->
+    <div class="relative w-full h-[1.5px] bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_15px_rgba(251,191,36,0.9)]"></div>
+    <!-- Ambient Warm Aura in Bottom Shutter -->
+    <div class="absolute -top-36 left-1/2 -translate-x-1/2 w-[650px] h-[300px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.14)_0%,transparent_70%)] blur-3xl pointer-events-none"></div>
+  </div>
 
-      <!-- Glowing Particle Dots -->
-      <span class="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-orange-400 shadow-[0_0_8px_#ff6b00]"></span>
-      <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-amber-300 shadow-[0_0_8px_#f59e0b]"></span>
-    </div>
+  <!-- Center Stage Container (Floating above Shutters) -->
+  <div
+    id="preloader-center"
+    class="fixed inset-0 z-20 flex flex-col items-center justify-center px-4 pointer-events-none"
+  >
+    <!-- Background Soft Ambient Breathing Orb -->
+    <div class="absolute w-[460px] h-[460px] rounded-full bg-[radial-gradient(circle,rgba(249,115,22,0.15)_0%,rgba(245,158,11,0.05)_45%,transparent_70%)] blur-3xl pointer-events-none"></div>
 
-    <!-- Digital Large Counter (0% -> 100%) -->
-    <div class="flex items-baseline gap-1 mb-3">
-      <span
-        id="preloader-counter"
-        class="font-mono text-5xl sm:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-300 to-orange-400 drop-shadow-[0_4px_25px_rgba(255,107,0,0.4)]"
-      >
-        0
+    <!-- Editorial Pill Badge -->
+    <div class="relative z-10 mb-6 sm:mb-8 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-orange-500/30 backdrop-blur-xl shadow-[0_0_20px_rgba(249,115,22,0.15)]">
+      <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_#f59e0b]"></span>
+      <span class="font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-300">
+        SHAMSIDDINOV MUXIDDIN &bull; 2026
       </span>
-      <span class="font-mono text-2xl sm:text-3xl font-bold text-orange-400/90">%</span>
     </div>
 
-    <!-- High-Tech Segmented Progress Bar -->
-    <div class="w-full bg-[#0d0d16] border border-orange-500/25 rounded-full p-1 shadow-[inset_0_2px_8px_rgba(0,0,0,0.8)] mb-4">
+    <!-- Kinetic Word Greeting Carousel (Apple Style Masked Stagger) -->
+    <div class="relative z-10 h-16 sm:h-20 md:h-24 w-full max-w-xl flex items-center justify-center overflow-hidden">
+      
+      <!-- Word 1: SALOM -->
       <div
-        id="preloader-bar"
-        class="h-2 rounded-full bg-gradient-to-r from-orange-600 via-amber-400 to-yellow-300 shadow-[0_0_15px_rgba(255,184,0,0.7)] transition-all duration-75 ease-out w-0 relative overflow-hidden"
+        class="kinetic-word absolute inset-0 flex items-center justify-center text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-amber-200/90 drop-shadow-[0_4px_30px_rgba(255,184,0,0.3)] opacity-0 translate-y-12"
       >
-        <!-- Shimmer line on bar -->
-        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_1.2s_infinite]"></div>
+        <span>SALOM</span>
+        <span class="text-orange-500 ml-1">.</span>
       </div>
+
+      <!-- Word 2: HELLO -->
+      <div
+        class="kinetic-word absolute inset-0 flex items-center justify-center text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-amber-200/90 drop-shadow-[0_4px_30px_rgba(255,184,0,0.3)] opacity-0 translate-y-12"
+      >
+        <span>HELLO</span>
+        <span class="text-amber-400 ml-1">.</span>
+      </div>
+
+      <!-- Word 3: CREATING -->
+      <div
+        class="kinetic-word absolute inset-0 flex items-center justify-center text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-orange-300 drop-shadow-[0_4px_30px_rgba(255,107,0,0.3)] opacity-0 translate-y-12"
+      >
+        <span>CREATING</span>
+        <span class="text-orange-400 ml-1">...</span>
+      </div>
+
+      <!-- Word 4: MUXIDDIN.DEV -->
+      <div
+        class="kinetic-word absolute inset-0 flex items-center justify-center text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-sans opacity-0 translate-y-12"
+      >
+        <span class="text-white drop-shadow-[0_4px_30px_rgba(255,255,255,0.3)]">Muxiddin</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300 font-extrabold drop-shadow-[0_4px_25px_rgba(249,115,22,0.4)]">.dev</span>
+      </div>
+
     </div>
 
-    <!-- Cycling System Boot Logs -->
-    <div class="flex flex-col items-center text-center space-y-1">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        <span
-          id="preloader-status-text"
-          class="font-mono text-xs sm:text-sm font-semibold text-slate-300 tracking-wide"
-        >
-          Tizim tayyorlanmoqda...
+    <!-- Minimal Editorial Laser Progress Line -->
+    <div class="relative z-10 w-64 sm:w-80 h-[2px] bg-white/[0.08] rounded-full overflow-hidden mt-6 sm:mt-8 shadow-[inset_0_1px_3px_rgba(0,0,0,0.8)]">
+      <div
+        id="preloader-laser-line"
+        class="absolute inset-y-0 left-0 bg-gradient-to-r from-orange-600 via-amber-400 to-yellow-200 shadow-[0_0_14px_rgba(251,191,36,0.9)] w-0"
+      ></div>
+    </div>
+
+    <!-- Editorial Counter & Status Label -->
+    <div class="relative z-10 flex items-center justify-between w-64 sm:w-80 mt-3 font-mono text-xs">
+      <div class="flex items-center gap-1.5 text-slate-400">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span id="preloader-status-sub" class="tracking-wider uppercase text-[10px] sm:text-[11px] text-slate-400 font-medium">
+          INITIALIZING
         </span>
       </div>
-      <p class="font-mono text-[11px] text-slate-500 uppercase tracking-widest">
-        Shamsiddinov Muxiddin &middot; IT Portfolio
-      </p>
-    </div>
-
-    <!-- Bottom Skip / Ready Ticks -->
-    <div class="flex items-center gap-3 mt-6 text-[10px] font-mono text-slate-500">
-      <span class="flex items-center gap-1 text-orange-400/80">
-        <span class="w-1 h-1 rounded-full bg-orange-400"></span> 3D Matrix
-      </span>
-      <span>&bull;</span>
-      <span class="flex items-center gap-1 text-amber-300/80">
-        <span class="w-1 h-1 rounded-full bg-amber-400"></span> 24+ Tech Stack
-      </span>
-      <span>&bull;</span>
-      <span class="flex items-center gap-1 text-emerald-400/80">
-        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Verified
-      </span>
+      <div class="flex items-baseline gap-1 text-slate-400 font-bold">
+        <span id="preloader-counter-num" class="font-mono text-base sm:text-lg text-amber-300 font-extrabold">
+          000
+        </span>
+        <span class="text-[10px] text-orange-400/80 font-mono">/ 100</span>
+      </div>
     </div>
 
   </div>
+
 </div>
 
-<script is:inline>
-  (function initPreloader() {
-    const overlay = document.getElementById("preloader-overlay");
-    const counterEl = document.getElementById("preloader-counter");
-    const barEl = document.getElementById("preloader-bar");
-    const statusTextEl = document.getElementById("preloader-status-text");
+<!-- GSAP Driven Editorial Split Reveal Script -->
+<script>
+  import gsap from "gsap";
 
-    if (!overlay || !counterEl || !barEl || !statusTextEl) return;
+  function runEditorialPreloader() {
+    const wrapper = document.getElementById("preloader-wrapper");
+    const shutterTop = document.getElementById("preloader-shutter-top");
+    const shutterBottom = document.getElementById("preloader-shutter-bottom");
+    const centerStage = document.getElementById("preloader-center");
+    const laserLine = document.getElementById("preloader-laser-line");
+    const counterNum = document.getElementById("preloader-counter-num");
+    const statusSub = document.getElementById("preloader-status-sub");
+    const words = document.querySelectorAll(".kinetic-word");
 
-    // Prevent body scroll during initial loading
+    if (!wrapper || !shutterTop || !shutterBottom || !centerStage || words.length === 0) return;
+
+    // Lock scrolling during preloader
     document.body.style.overflow = "hidden";
 
-    const messages = [
-      "Tizim tayyorlanmoqda...",
-      "Full-stack modullar yuklanmoqda...",
-      "Python & Aiogram 3 yadrosi ishga tushmoqda...",
-      "3D Tech Galereyasi yaratilmoqda...",
-      "Shaxsiy portfolio tayyor!"
-    ];
-
-    const totalDuration = 2300; // ~2.3 seconds
-    const startTime = performance.now();
-
-    function update() {
-      const now = performance.now();
-      const elapsed = now - startTime;
-      const progress = Math.min(1, elapsed / totalDuration);
-
-      // Smooth cubic easing for high-tech feeling
-      const easedProgress = Math.pow(progress, 0.85);
-      const currentPercent = Math.floor(easedProgress * 100);
-
-      counterEl.textContent = currentPercent.toString();
-      barEl.style.width = currentPercent + "%";
-
-      // Update message steps
-      const msgIndex = Math.min(
-        messages.length - 1,
-        Math.floor(progress * messages.length)
-      );
-      statusTextEl.textContent = messages[msgIndex];
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        // Complete!
-        counterEl.textContent = "100";
-        barEl.style.width = "100%";
-        statusTextEl.textContent = "Xush kelibsiz!";
-
-        setTimeout(() => {
-          overlay.style.opacity = "0";
-          overlay.style.transform = "translateY(-100%) scale(1.02)";
-          overlay.style.pointerEvents = "none";
-          document.body.style.overflow = "";
-
-          setTimeout(() => {
-            overlay.setAttribute("aria-hidden", "true");
-            overlay.style.display = "none";
-            // Dispatch event for smooth reveal of animations
-            window.dispatchEvent(new CustomEvent("preloader:complete"));
-          }, 700);
-        }, 150);
+    // Master GSAP Timeline
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.out" },
+      onComplete: () => {
+        // Unlock scroll
+        document.body.style.overflow = "";
+        wrapper.style.display = "none";
+        // Dispatch completion event for hero reveal
+        window.dispatchEvent(new CustomEvent("preloader:complete"));
       }
-    }
+    });
 
-    requestAnimationFrame(update);
-  })();
+    // 1. Progress Counter & Laser Line Tween (0 -> 100 in ~2.0 seconds)
+    const counterObj = { val: 0 };
+    tl.to(counterObj, {
+      val: 100,
+      duration: 2.05,
+      ease: "power2.inOut",
+      onUpdate: () => {
+        const intVal = Math.floor(counterObj.val);
+        const formatted = intVal < 10 ? `00${intVal}` : intVal < 100 ? `0${intVal}` : `${intVal}`;
+        if (counterNum) counterNum.textContent = formatted;
+        if (laserLine) laserLine.style.width = `${counterObj.val}%`;
+
+        // Update subtle status subtitle
+        if (statusSub) {
+          if (intVal < 30) statusSub.textContent = "INITIALIZING...";
+          else if (intVal < 70) statusSub.textContent = "LOADING MODULES...";
+          else if (intVal < 98) statusSub.textContent = "ALMOST READY...";
+          else statusSub.textContent = "WELCOME!";
+        }
+      }
+    }, 0);
+
+    // 2. Kinetic Words Sequence (Apple Style: Smooth Stagger Up & Out)
+    const wordDuration = 0.42;
+
+    words.forEach((word, index) => {
+      const startTime = index * 0.45;
+      const isLast = index === words.length - 1;
+
+      // Animate In
+      tl.fromTo(
+        word,
+        { opacity: 0, y: 35, scale: 0.94, filter: "blur(4px)" },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: wordDuration,
+          ease: "power3.out",
+        },
+        startTime
+      );
+
+      // Animate Out (unless it's the last word Muxiddin.dev)
+      if (!isLast) {
+        tl.to(
+          word,
+          {
+            opacity: 0,
+            y: -35,
+            scale: 1.05,
+            filter: "blur(4px)",
+            duration: 0.32,
+            ease: "power3.in",
+          },
+          startTime + wordDuration
+        );
+      }
+    });
+
+    // 3. Center Stage Fade & Scale Out at 100%
+    tl.to(
+      centerStage,
+      {
+        opacity: 0,
+        scale: 0.95,
+        filter: "blur(6px)",
+        duration: 0.38,
+        ease: "power2.in",
+      },
+      2.12
+    );
+
+    // 4. Dual-Shutter Split Curtain Reveal (Apple / Linear Elite Exit)
+    tl.to(
+      shutterTop,
+      {
+        yPercent: -100,
+        duration: 0.85,
+        ease: "power4.inOut",
+      },
+      2.22
+    );
+
+    tl.to(
+      shutterBottom,
+      {
+        yPercent: 100,
+        duration: 0.85,
+        ease: "power4.inOut",
+      },
+      2.22
+    );
+
+    // 5. Subtle Scale & Blur Reveal of Hero page
+    tl.fromTo(
+      "#main-nav, #home",
+      { scale: 0.98, opacity: 0.6 },
+      { scale: 1, opacity: 1, duration: 0.8, ease: "power3.out" },
+      2.35
+    );
+  }
+
+  // Initialize on DOM load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runEditorialPreloader);
+  } else {
+    runEditorialPreloader();
+  }
 </script>
