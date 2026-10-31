@@ -36,7 +36,7 @@ export const developerLottie = {
             },
             {
               ty: "st",
-              c: { a: 0, k: [1, 0.42, 0, 1] }, // Orange #ff6b00
+              c: { a: 0, k: [0.306, 0.929, 0.722, 1] }, // Electric Mint #4EEDB8
               w: { a: 0, k: 3 },
               d: [
                 { n: "d", v: { a: 0, k: 12 } },
@@ -81,7 +81,7 @@ export const developerLottie = {
             },
             {
               ty: "st",
-              c: { a: 0, k: [1, 0.72, 0, 1] }, // Amber #ffb800
+              c: { a: 0, k: [0.373, 0.996, 0.769, 1] }, // Cyan-Mint #5FFEC4
               w: { a: 0, k: 3.5 },
               lc: 2,
               lj: 2
@@ -107,7 +107,7 @@ export const developerLottie = {
             },
             {
               ty: "st",
-              c: { a: 0, k: [1, 0.42, 0, 1] }, // Orange
+              c: { a: 0, k: [1, 1, 1, 1] }, // Crisp White #FFFFFF
               w: { a: 0, k: 3 },
               lc: 2
             },
@@ -132,7 +132,7 @@ export const developerLottie = {
             },
             {
               ty: "st",
-              c: { a: 0, k: [1, 0.72, 0, 1] }, // Amber
+              c: { a: 0, k: [0.373, 0.996, 0.769, 1] }, // Cyan-Mint #5FFEC4
               w: { a: 0, k: 3.5 },
               lc: 2,
               lj: 2
@@ -264,7 +264,7 @@ export const scrollLottie = {
             },
             {
               ty: "st",
-              c: { a: 0, k: [1, 0.42, 0, 0.8] },
+              c: { a: 0, k: [0.306, 0.929, 0.722, 0.8] }, // Electric Mint #4EEDB8
               w: { a: 0, k: 2 }
             },
             { ty: "tr", p: { a: 0, k: [0, 0] }, r: { a: 0, k: 0 }, s: { a: 0, k: [100, 100] }, o: { a: 0, k: 100 } }
@@ -311,7 +311,7 @@ export const scrollLottie = {
             },
             {
               ty: "fl",
-              c: { a: 0, k: [1, 0.72, 0, 1] }
+              c: { a: 0, k: [0.373, 0.996, 0.769, 1] } // Cyan-Mint #5FFEC4
             },
             { ty: "tr", p: { a: 0, k: [0, 0] }, r: { a: 0, k: 0 }, s: { a: 0, k: [100, 100] }, o: { a: 0, k: 100 } }
           ]

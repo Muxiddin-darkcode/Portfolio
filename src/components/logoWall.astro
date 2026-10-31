@@ -28,7 +28,7 @@ const technologies = [
     {
       [...technologies, ...technologies].map((tech, index) => (
         <div 
-          class="flex items-center gap-2.5 px-5 py-2.5 mx-2 rounded-xl bg-[#07070b] border border-orange-500/20 hover:border-orange-500 hover:bg-orange-500/10 hover:shadow-[0_0_15px_rgba(255,107,0,0.3)] transition-all duration-300 group cursor-default"
+          class="flex items-center gap-2.5 px-5 py-2.5 mx-2 rounded-xl bg-[#060a0f] border border-[#4EEDB8]/20 hover:border-[#4EEDB8] hover:bg-[#4EEDB8]/10 hover:shadow-[0_0_15px_rgba(78,237,184,0.3)] transition-all duration-300 group cursor-default"
           aria-hidden={index >= technologies.length ? "true" : "false"}
         >
           <img
@@ -39,7 +39,7 @@ const technologies = [
             height="18"
             loading="lazy"
           />
-          <span class="text-xs font-mono font-medium text-slate-300 group-hover:text-orange-400 whitespace-nowrap transition-colors">
+          <span class="text-xs font-mono font-medium text-slate-300 group-hover:text-[#4EEDB8] whitespace-nowrap transition-colors">
             {tech.name}
           </span>
         </div>

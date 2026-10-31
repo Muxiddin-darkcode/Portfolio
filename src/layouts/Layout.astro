@@ -10,6 +10,7 @@ const {
 } = Astro.props;
 
 import Preloader from "../components/Preloader.astro";
+import BackgroundEffect from "../components/BackgroundEffect.astro";
 
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
 const siteUrl = "https://muxiddin-darkcode.github.io";
@@ -25,11 +26,11 @@ const siteUrl = "https://muxiddin-darkcode.github.io";
     <link rel="icon" type="image/png" href={`${baseUrl}/favicon.png`} />
     <link rel="canonical" href={siteUrl} />
 
-    <!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+    <!-- Google Fonts: Aldrich, Space Grotesk & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -75,28 +76,18 @@ const siteUrl = "https://muxiddin-darkcode.github.io";
       }
     </script>
   </head>
-  <body class="bg-[#040404] text-slate-100 font-sans min-h-screen selection:bg-[#ff6b00] selection:text-black relative overflow-x-hidden antialiased">
-    <!-- Futuristic Cyber Preloader (2.3s) -->
+  <body class="bg-[#040404] text-slate-100 font-sans min-h-screen selection:bg-[#4EEDB8] selection:text-[#02130c] relative overflow-x-hidden antialiased w-full">
+    <!-- Futuristic Cyber Preloader (1.15s) -->
     <Preloader />
     
     <!-- Top Scroll Progress -->
-    <div id="scroll-progress" class="fixed top-0 left-0 h-[2.5px] bg-gradient-to-r from-[#ff3d00] via-[#ff6b00] to-[#ffb800] z-[100] transition-all duration-75 w-0 shadow-[0_0_12px_#ff6b00]"></div>
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[2.5px] bg-gradient-to-r from-[#00F5A0] via-[#4EEDB8] to-[#5FFEC4] z-[100] transition-all duration-75 w-0 shadow-[0_0_12px_#4EEDB8]"></div>
 
-    <!-- Interactive Ambient Glow Follower -->
-    <div id="cursor-glow" class="pointer-events-none fixed -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[radial-gradient(circle,_rgba(255,107,0,0.12)_0%,_rgba(255,184,0,0.05)_40%,_transparent_70%)] blur-2xl z-0 transition-opacity duration-300 opacity-0 md:opacity-100"></div>
-
-    <!-- Atmosphere & Subtle Ambient Glows -->
-    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
-      <div class="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-[radial-gradient(ellipse_at_center,_rgba(255,107,0,0.16)_0%,_transparent_65%)] blur-3xl"></div>
-      <div class="absolute top-[35%] -left-[15%] w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(255,184,0,0.08)_0%,_transparent_65%)] blur-3xl"></div>
-      <div class="absolute top-[65%] -right-[15%] w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,_rgba(255,85,0,0.10)_0%,_transparent_65%)] blur-3xl"></div>
-      
-      <!-- Crisp Grid Lines -->
-      <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,107,0,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,107,0,0.035)_1px,transparent_1px)] bg-[size:52px_52px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_90%)]"></div>
-    </div>
+    <!-- Soddaroq va nafis orqa fon animatsiyasi (Luminous Particles + Breathing Auroras) -->
+    <BackgroundEffect />
 
     <!-- Main Container -->
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="mx-auto max-w-6xl px-3 sm:px-6 lg:px-8 relative z-10 w-full overflow-x-hidden sm:overflow-x-visible">
       <slot />
     </div>
 
@@ -109,15 +100,6 @@ const siteUrl = "https://muxiddin-darkcode.github.io";
         const progressEl = document.getElementById("scroll-progress");
         if (progressEl) progressEl.style.width = scrollPercent + "%";
       }, { passive: true });
-
-      // Interactive Cursor Glow Follower
-      const glow = document.getElementById("cursor-glow");
-      if (glow && window.innerWidth >= 768) {
-        window.addEventListener("mousemove", (e) => {
-          glow.style.left = e.clientX + "px";
-          glow.style.top = e.clientY + "px";
-        }, { passive: true });
-      }
     </script>
 
     <!-- Bundled GSAP Animation Initialization -->
@@ -136,11 +118,11 @@ const siteUrl = "https://muxiddin-darkcode.github.io";
 <style is:global>
   :root {
     --bg-base: #040404;
-    --bg-card: rgba(15, 15, 20, 0.75);
-    --border-cyber: rgba(255, 107, 0, 0.16);
-    --border-cyber-hover: rgba(255, 107, 0, 0.7);
-    --neon-orange: #ff6b00;
-    --cyber-gold: #ffb800;
+    --bg-card: rgba(12, 20, 29, 0.75);
+    --border-cyber: rgba(78, 237, 184, 0.18);
+    --border-cyber-hover: rgba(78, 237, 184, 0.7);
+    --neon-orange: #4EEDB8;
+    --cyber-gold: #5FFEC4;
   }
 
   * {
@@ -149,31 +131,51 @@ const siteUrl = "https://muxiddin-darkcode.github.io";
     margin: 0;
   }
 
-  /* Cyberpunk Monospace & Text Styling */
+  html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    font-family: 'Aldrich', 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    font-family: 'Aldrich', 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  /* Cyberpunk Monospace & Text Styling - Aldrich everywhere */
   .font-mono {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Aldrich', 'JetBrains Mono', monospace;
   }
 
   .font-sans {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Aldrich', 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, button, input, textarea, a {
+    font-family: 'Aldrich', 'Space Grotesk', system-ui, sans-serif;
   }
 
   /* Glowing Cyberpunk Text */
   .cyber-gradient-text {
-    background: linear-gradient(135deg, #ffffff 15%, #ffb800 65%, #ff6b00 100%);
+    background: linear-gradient(135deg, #ffffff 15%, #4EEDB8 65%, #5FFEC4 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .cyber-neon-text {
-    color: #ff6b00;
-    text-shadow: 0 0 15px rgba(255, 107, 0, 0.65), 0 0 30px rgba(255, 107, 0, 0.3);
+    color: #4EEDB8;
+    text-shadow: 0 0 15px rgba(78, 237, 184, 0.65), 0 0 30px rgba(78, 237, 184, 0.3);
   }
 
   .cyber-gold-text {
-    color: #ffb800;
-    text-shadow: 0 0 15px rgba(255, 184, 0, 0.6), 0 0 30px rgba(255, 184, 0, 0.25);
+    color: #5FFEC4;
+    text-shadow: 0 0 15px rgba(95, 254, 196, 0.6), 0 0 30px rgba(95, 254, 196, 0.25);
   }
 
   /* Bento & Cyber Card Utility */
@@ -188,7 +190,7 @@ const siteUrl = "https://muxiddin-darkcode.github.io";
 
   .cyber-card:hover {
     border-color: var(--border-cyber-hover);
-    box-shadow: 0 10px 30px -10px rgba(255, 107, 0, 0.3), 0 0 20px rgba(255, 184, 0, 0.15);
+    box-shadow: 0 10px 30px -10px rgba(78, 237, 184, 0.3), 0 0 20px rgba(95, 254, 196, 0.15);
   }
 
   /* Magnetic Buttons & Interactive Micro-Animations */
@@ -261,6 +263,15 @@ const siteUrl = "https://muxiddin-darkcode.github.io";
     will-change: transform;
   }
 
+  /* No Scrollbar Utility */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
   /* Cyber Button with angled clip corner */
   .cyber-btn {
     position: relative;
@@ -278,12 +289,12 @@ const siteUrl = "https://muxiddin-darkcode.github.io";
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #1c1c24;
+    background: #0c1520;
     border-radius: 4px;
-    border: 1px solid rgba(255, 107, 0, 0.2);
+    border: 1px solid rgba(78, 237, 184, 0.25);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #ff6b00, #ffb800);
+    background: linear-gradient(to bottom, #4EEDB8, #5FFEC4);
   }
 </style>

@@ -7,9 +7,9 @@ interface MatrixRainProps {
 }
 
 export default function MatrixRain({
-  primaryColor = "#ff6b00",
-  headColor = "#fff7ed",
-  accentColor = "#ffb800",
+  primaryColor = "#4EEDB8",
+  headColor = "#ffffff",
+  accentColor = "#5FFEC4",
 }: MatrixRainProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -125,7 +125,7 @@ export default function MatrixRain({
         // Draw Head of Raindrop (Brightest Glowing Leader)
         if (isNearMouse) {
           ctx.fillStyle = "#ffffff";
-          ctx.shadowColor = "#ffb800";
+          ctx.shadowColor = "#5FFEC4";
           ctx.shadowBlur = 15;
           ctx.fillText(char, x, y);
         } else {
@@ -148,11 +148,11 @@ export default function MatrixRain({
           const alpha = Math.max(0, 1 - j / trailLength);
 
           if (j < 3) {
-            ctx.fillStyle = `rgba(255, 184, 0, ${alpha * 0.95})`; // Amber gold near head
+            ctx.fillStyle = `rgba(95, 254, 196, ${alpha * 0.95})`; // Neon mint near head
           } else if (j < 8) {
-            ctx.fillStyle = `rgba(255, 107, 0, ${alpha * 0.85})`; // Vibrant orange mid
+            ctx.fillStyle = `rgba(78, 237, 184, ${alpha * 0.85})`; // Vibrant mint mid
           } else {
-            ctx.fillStyle = `rgba(180, 83, 9, ${alpha * 0.55})`; // Deep warm ember tail
+            ctx.fillStyle = `rgba(5, 150, 105, ${alpha * 0.55})`; // Deep emerald tail
           }
 
           ctx.fillText(trailChar, x, trailY);
@@ -183,30 +183,30 @@ export default function MatrixRain({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full min-h-[300px] sm:min-h-[360px] overflow-hidden bg-[#050508] select-none cursor-crosshair rounded-2xl"
+      className="relative w-full h-full min-h-[300px] sm:min-h-[360px] overflow-hidden bg-[#04070a] select-none cursor-crosshair rounded-2xl"
     >
       {/* Matrix Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 block w-full h-full" />
 
       {/* High-tech HUD Vignette Gradients */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(5,5,8,0.7)_85%,rgba(5,5,8,0.95)_100%)]"></div>
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#050508] to-transparent"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-[#050508] to-transparent"></div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(4,7,10,0.7)_85%,rgba(4,7,10,0.95)_100%)]"></div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#04070a] to-transparent"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-[#04070a] to-transparent"></div>
 
       {/* Subtle Cyber Grid Texture */}
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,107,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,107,0,0.03)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(78,237,184,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(78,237,184,0.03)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
       {/* Top Overlay Telemetry Bar */}
       <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-auto z-10 font-mono text-[11px]">
-        <div className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-orange-500/30 text-amber-300 shadow-lg">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <div className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-[#4EEDB8]/30 text-[#4EEDB8] shadow-lg">
+          <span className="w-2 h-2 rounded-full bg-[#4EEDB8] animate-pulse"></span>
           <span className="font-semibold tracking-wide">MATRIX RAIN 2.0</span>
         </div>
 
         <button
           onClick={() => setActiveSpeed((prev) => (prev === "normal" ? "fast" : "normal"))}
           title="Tezlikni o'zgartirish"
-          className="px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-orange-500/30 text-orange-400 hover:text-white hover:border-orange-400 text-[10px] font-bold transition-all cursor-pointer"
+          className="px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-[#4EEDB8]/30 text-[#4EEDB8] hover:text-white hover:border-[#5FFEC4] text-[10px] font-bold transition-all cursor-pointer"
         >
           {activeSpeed === "fast" ? "⚡ FAST" : "● NORMAL"}
         </button>
@@ -214,16 +214,16 @@ export default function MatrixRain({
 
       {/* Central Full-Stack Code HUD Box */}
       <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 pointer-events-none z-10 flex flex-col items-center justify-center">
-        <div className="w-full max-w-[280px] sm:max-w-xs p-3.5 rounded-2xl bg-black/80 backdrop-blur-xl border border-orange-500/35 shadow-[0_0_30px_rgba(255,107,0,0.25)] space-y-2 text-center group">
-          <div className="flex items-center justify-center gap-2 font-mono text-xs text-amber-300 font-bold">
-            <span className="text-orange-400">&gt;</span>
+        <div className="w-full max-w-[280px] sm:max-w-xs p-3.5 rounded-2xl bg-black/80 backdrop-blur-xl border border-[#4EEDB8]/35 shadow-[0_0_30px_rgba(78,237,184,0.25)] space-y-2 text-center group">
+          <div className="flex items-center justify-center gap-2 font-mono text-xs text-[#5FFEC4] font-bold">
+            <span className="text-[#4EEDB8]">&gt;</span>
             <span>SYSTEM_KERNEL: READY</span>
           </div>
           <p className="font-mono text-[11px] text-slate-300 leading-tight">
             Python &middot; Aiogram 3 &middot; React &middot; FastAPI
           </p>
-          <div className="pt-1 flex items-center justify-center gap-1.5 font-mono text-[10px] text-emerald-400">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          <div className="pt-1 flex items-center justify-center gap-1.5 font-mono text-[10px] text-[#4EEDB8]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#4EEDB8] animate-ping"></span>
             <span>Latency: 0.1ms · 60 FPS</span>
           </div>
         </div>
@@ -231,10 +231,10 @@ export default function MatrixRain({
 
       {/* Bottom Floating Stack Badges */}
       <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-auto z-10 font-mono text-[11px]">
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-orange-500/30 text-orange-300 shadow-md">
+        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-[#4EEDB8]/30 text-[#4EEDB8] shadow-md">
           <span>⚡ Python & Aiogram 3</span>
         </div>
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-amber-400/30 text-amber-300 shadow-md">
+        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-[#5FFEC4]/30 text-[#5FFEC4] shadow-md">
           <span>💻 Full-Stack Web</span>
         </div>
       </div>

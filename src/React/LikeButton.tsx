@@ -73,8 +73,8 @@ const LikeButton = () => {
           rounded-xl border transition-all duration-300
           ${
             isLiked
-              ? "border-orange-500 bg-orange-500/20 text-orange-400 shadow-[0_0_18px_rgba(255,107,0,0.4)] cursor-default"
-              : "border-orange-500/30 hover:border-orange-400 hover:text-orange-300 bg-[#0c0c12]/90 hover:bg-orange-500/10 cursor-pointer shadow-md"
+              ? "border-[#4EEDB8] bg-[#4EEDB8]/20 text-[#4EEDB8] shadow-[0_0_18px_rgba(78,237,184,0.4)] cursor-default"
+              : "border-[#4EEDB8]/30 hover:border-[#4EEDB8] hover:text-[#5FFEC4] bg-[#060a0f]/90 hover:bg-[#4EEDB8]/10 cursor-pointer shadow-md"
           }
         `}
       >
@@ -87,8 +87,8 @@ const LikeButton = () => {
           fill="currentColor"
           className={`w-4 h-4 transition-colors duration-300 ${
             isLiked
-              ? "text-orange-500 drop-shadow-[0_0_10px_#ff6b00]"
-              : "text-slate-400 group-hover:text-orange-400"
+              ? "text-[#4EEDB8] drop-shadow-[0_0_10px_#4EEDB8]"
+              : "text-slate-400 group-hover:text-[#4EEDB8]"
           }`}
         >
           <path d="M16.5 3C19.5376 3 22 5.5 22 9C22 16 14.5 20 12 21.5C9.5 20 2 16 2 9C2 5.5 4.5 3 7.5 3C9.35997 3 11 4 12 5C13 4 14.64 3 16.5 3ZM12.9339 18.6038C13.8155 18.0485 14.61 17.4955 15.3549 16.9029C18.3337 14.533 20 11.9435 20 9C20 6.64076 18.463 5 16.5 5C15.4241 5 14.2593 5.56911 13.4142 6.41421L12 7.82843L10.5858 6.41421C9.74068 5.56911 8.5759 5 7.5 5C5.55906 5 4 6.6565 4 9C4 11.9435 5.66627 14.533 8.64514 16.9029C9.39 17.4955 10.1845 18.0485 11.0661 18.6038C11.3646 18.7919 11.6611 18.9729 12 19.1752C12.3389 18.9729 12.6354 18.7919 12.9339 18.6038Z"></path>
@@ -113,7 +113,7 @@ const LikeButton = () => {
               animate={{ opacity: 0, scale: 1.5, x, y }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="absolute left-1/2 top-1/2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-orange-400 to-amber-300 pointer-events-none shadow-[0_0_8px_#ff6b00]"
+              className="absolute left-1/2 top-1/2 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#00F5A0] to-[#5FFEC4] pointer-events-none shadow-[0_0_8px_#4EEDB8]"
             />
           );
         })}

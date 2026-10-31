@@ -19,14 +19,14 @@ const navItems: NavItem[] = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 flex justify-center px-3 sm:px-6 py-3 sm:py-4 pointer-events-none transition-all duration-300">
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-center px-2.5 sm:px-6 py-2.5 sm:py-4 pointer-events-none transition-all duration-300">
   <div
     id="main-nav"
-    class="pointer-events-auto flex items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-2.5 rounded-2xl border border-orange-500/25 bg-[#09090d]/90 backdrop-blur-2xl shadow-[0_12px_36px_rgba(0,0,0,0.85),0_0_20px_rgba(249,115,22,0.12)] transition-all duration-300 w-full max-w-5xl"
+    class="pointer-events-auto flex items-center justify-between gap-2 sm:gap-4 px-3 sm:px-6 py-2 sm:py-2.5 rounded-2xl border border-[#4EEDB8]/25 bg-[#09090d]/90 backdrop-blur-2xl shadow-[0_12px_36px_rgba(0,0,0,0.85),0_0_20px_rgba(78,237,184,0.12)] transition-all duration-300 w-full max-w-5xl"
   >
     <!-- Brand Logo -->
-    <a href="#home" class="magnetic-item flex items-center gap-2.5 text-white font-bold tracking-tight flex-shrink-0 group">
-      <div class="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden ring-2 ring-orange-500/50 group-hover:ring-orange-400 shadow-[0_0_12px_rgba(249,115,22,0.35)] group-hover:scale-105 transition-all">
+    <a href="#home" class="flex items-center gap-2 sm:gap-2.5 text-white font-bold tracking-tight flex-shrink-0 group">
+      <div class="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden ring-2 ring-[#4EEDB8]/50 group-hover:ring-[#5FFEC4] shadow-[0_0_12px_rgba(78,237,184,0.35)] group-hover:scale-105 transition-all">
         <img
           src={`${baseUrl}/images/profile.jpg`}
           alt="Shamsiddinov Muxiddin"
@@ -34,9 +34,9 @@ const navItems: NavItem[] = [
           loading="eager"
         />
       </div>
-      <div class="flex items-center gap-1.5 font-bold text-sm sm:text-base">
-        <span class="text-white group-hover:text-orange-400 transition-colors">Muxiddin</span>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300 font-extrabold">.dev</span>
+      <div class="flex items-center gap-1 font-bold text-sm sm:text-base font-sans">
+        <span class="text-white group-hover:text-[#4EEDB8] transition-colors">Muxiddin</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#4EEDB8] to-[#5FFEC4] font-extrabold">.dev</span>
       </div>
     </a>
 
@@ -46,28 +46,28 @@ const navItems: NavItem[] = [
         navItems.map((item) => (
           <a
             href={item.href}
-            class="nav-link magnetic-item group flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-orange-500/15 hover:border-orange-500/30 border border-transparent transition-all duration-200 whitespace-nowrap"
+            class="nav-link group flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-[#4EEDB8]/15 hover:border-[#4EEDB8]/30 border border-transparent transition-all duration-200 whitespace-nowrap font-sans"
           >
             {item.icon === "home" && (
-              <svg class="w-3.5 h-3.5 text-orange-400/80 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-3.5 h-3.5 text-[#4EEDB8]/80 group-hover:text-[#5FFEC4] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                 <polyline points="9 22 9 12 15 12 15 22"/>
               </svg>
             )}
             {item.icon === "user" && (
-              <svg class="w-3.5 h-3.5 text-orange-400/80 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-3.5 h-3.5 text-[#4EEDB8]/80 group-hover:text-[#5FFEC4] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>
               </svg>
             )}
             {item.icon === "code" && (
-              <svg class="w-3.5 h-3.5 text-orange-400/80 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-3.5 h-3.5 text-[#4EEDB8]/80 group-hover:text-[#5FFEC4] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="16 18 22 12 16 6"/>
                 <polyline points="8 6 2 12 8 18"/>
               </svg>
             )}
             {item.icon === "grid" && (
-              <svg class="w-3.5 h-3.5 text-orange-400/80 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-3.5 h-3.5 text-[#4EEDB8]/80 group-hover:text-[#5FFEC4] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect width="7" height="7" x="3" y="3" rx="1"/>
                 <rect width="7" height="7" x="14" y="3" rx="1"/>
                 <rect width="7" height="7" x="14" y="14" rx="1"/>
@@ -75,13 +75,13 @@ const navItems: NavItem[] = [
               </svg>
             )}
             {item.icon === "briefcase" && (
-              <svg class="w-3.5 h-3.5 text-orange-400/80 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-3.5 h-3.5 text-[#4EEDB8]/80 group-hover:text-[#5FFEC4] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
                 <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
               </svg>
             )}
             {item.icon === "trophy" && (
-              <svg class="w-3.5 h-3.5 text-orange-400/80 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-3.5 h-3.5 text-[#4EEDB8]/80 group-hover:text-[#5FFEC4] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
                 <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
                 <path d="M4 22h16"/>
@@ -91,7 +91,7 @@ const navItems: NavItem[] = [
               </svg>
             )}
             {item.icon === "mail" && (
-              <svg class="w-3.5 h-3.5 text-orange-400/80 group-hover:text-amber-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-3.5 h-3.5 text-[#4EEDB8]/80 group-hover:text-[#5FFEC4] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10z"/>
                 <polygon points="22 7 12 13 2 7"/>
               </svg>
@@ -102,25 +102,25 @@ const navItems: NavItem[] = [
       }
     </nav>
 
-    <!-- Right Action: Clean Elegant CTA Button -->
-    <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+    <!-- Right Side CTA: Direct Aloqa button with Telegram icon -->
+    <div class="flex items-center gap-1.5 sm:gap-2">
       <a
         href="https://t.me/developer_muxiddin"
         target="_blank"
         rel="noopener noreferrer"
-        class="magnetic-btn btn-shine inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-stone-950 font-bold text-xs sm:text-xs shadow-md shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 active:scale-95 transition-all duration-200 whitespace-nowrap"
+        class="h-9 inline-flex items-center gap-1.5 px-2.5 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-[#4EEDB8] to-[#00F5A0] hover:from-[#5FFEC4] hover:to-[#4EEDB8] text-stone-950 text-xs font-bold shadow-md shadow-[#4EEDB8]/20 hover:shadow-[#4EEDB8]/35 transition-all duration-200 font-sans select-none"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5 flex-shrink-0">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.19-.04.35z"/>
         </svg>
-        <span>Aloqa</span>
+        <span class="hidden min-[380px]:inline">Aloqa</span>
       </a>
 
-      <!-- Mobile Hamburger Button -->
+      <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-btn"
         aria-label="Menyu"
-        class="magnetic-item md:hidden p-2 rounded-xl text-slate-300 hover:text-orange-400 hover:bg-orange-500/10 border border-orange-500/25 focus:outline-none transition-colors"
+        class="md:hidden w-9 h-9 flex items-center justify-center rounded-xl text-slate-300 hover:text-white hover:bg-[#4EEDB8]/10 focus:outline-none transition-colors border border-[#4EEDB8]/20"
       >
         <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -132,18 +132,18 @@ const navItems: NavItem[] = [
     </div>
   </div>
 
-  <!-- Mobile Dropdown Menu with Icons and High Quality Touch Targets -->
+  <!-- Mobile Dropdown Menu -->
   <div
     id="mobile-menu"
-    class="pointer-events-auto hidden md:hidden fixed top-16 sm:top-20 left-3 right-3 p-4 rounded-2xl bg-[#09090e]/95 border border-orange-500/30 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_25px_rgba(249,115,22,0.15)] flex-col gap-1.5 z-50 animate-scale"
+    class="pointer-events-auto hidden md:hidden fixed top-16 sm:top-20 left-3 right-3 p-3.5 sm:p-4 rounded-2xl bg-[#09090d]/95 border border-[#4EEDB8]/30 backdrop-blur-2xl shadow-[0_12px_36px_rgba(0,0,0,0.9),0_0_20px_rgba(78,237,184,0.15)] flex-col gap-1.5 z-50 font-sans max-h-[calc(100vh-80px)] overflow-y-auto no-scrollbar"
   >
     {
       navItems.map((item) => (
         <a
           href={item.href}
-          class="mobile-nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-200 hover:text-white hover:bg-orange-500/15 border border-transparent hover:border-orange-500/30 transition-all"
+          class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:text-white hover:bg-[#4EEDB8]/15 border border-transparent hover:border-[#4EEDB8]/30 min-h-[44px] transition-all active:bg-[#4EEDB8]/20"
         >
-          <span class="w-7 h-7 rounded-lg bg-orange-500/10 border border-orange-500/25 flex items-center justify-center text-orange-400 flex-shrink-0">
+          <span class="w-8 h-8 rounded-lg bg-[#4EEDB8]/10 border border-[#4EEDB8]/25 flex items-center justify-center text-[#4EEDB8] flex-shrink-0">
             {item.icon === "home" && (
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -197,12 +197,12 @@ const navItems: NavItem[] = [
         </a>
       ))
     }
-    <div class="pt-2 border-t border-orange-500/20">
+    <div class="pt-2 border-t border-[#4EEDB8]/20">
       <a
         href="https://t.me/developer_muxiddin"
         target="_blank"
         rel="noopener noreferrer"
-        class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-stone-950 font-bold text-xs shadow-md shadow-orange-500/20"
+        class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-[#4EEDB8] to-[#00F5A0] text-stone-950 font-bold text-xs shadow-md shadow-[#4EEDB8]/20 font-sans"
       >
         <span>Telegram orqali bog‘lanish</span>
       </a>
@@ -239,7 +239,32 @@ const navItems: NavItem[] = [
     });
   });
 
-  // Active section observer with warm gold highlight
+  // Tashqariga yoki Escape tugmasi bosilganda menyuni yopish
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (
+      mobileMenu &&
+      !mobileMenu.classList.contains("hidden") &&
+      !mobileMenu.contains(target) &&
+      !mobileBtn?.contains(target)
+    ) {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("flex");
+      hamburgerIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileMenu && !mobileMenu.classList.contains("hidden")) {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("flex");
+      hamburgerIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+    }
+  });
+
+  // Active section observer
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".nav-link");
@@ -251,10 +276,10 @@ const navItems: NavItem[] = [
             const id = entry.target.getAttribute("id");
             navLinks.forEach((link) => {
               if (link.getAttribute("href") === `#${id}`) {
-                link.classList.add("text-white", "bg-orange-500/20", "border-orange-500/40", "shadow-[0_0_12px_rgba(249,115,22,0.25)]");
+                link.classList.add("text-white", "bg-[#4EEDB8]/20", "border-[#4EEDB8]/40", "shadow-[0_0_12px_rgba(78,237,184,0.25)]");
                 link.classList.remove("text-slate-300", "border-transparent");
               } else {
-                link.classList.remove("text-white", "bg-orange-500/20", "border-orange-500/40", "shadow-[0_0_12px_rgba(249,115,22,0.25)]");
+                link.classList.remove("text-white", "bg-[#4EEDB8]/20", "border-[#4EEDB8]/40", "shadow-[0_0_12px_rgba(78,237,184,0.25)]");
                 link.classList.add("text-slate-300", "border-transparent");
               }
             });

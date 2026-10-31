@@ -145,7 +145,7 @@ const techStack: TechCard[] = [
 ---
 
 <!-- Pure, Borderless 3D Helix Stage: Continuous, unclipped, autonomous self-rotation -->
-<div class="helix-wrapper relative w-full flex items-center justify-center select-none py-2 sm:py-4 overflow-visible pointer-events-none">
+<div class="helix-wrapper relative w-full flex items-center justify-center select-none py-2 sm:py-4 pointer-events-none">
   
   <!-- Main 3D Viewport with Large Unclipped Stage -->
   <div
@@ -204,14 +204,15 @@ const techStack: TechCard[] = [
   .helix-wrapper {
     width: 100%;
     max-width: 100%;
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
   }
 
   /* Large unclipped viewport so cards never get cut off at top or bottom */
   #tech-helix-viewport {
     perspective: 750px;
     transform-style: preserve-3d;
-    height: 480px;
+    height: 440px;
     width: 100%;
     max-width: 100%;
     overflow: visible;
@@ -221,7 +222,21 @@ const techStack: TechCard[] = [
     transform-style: preserve-3d;
   }
 
-  /* Playing-Card Proportion on Mobile (Zero collision, No clipping) */
+  /* Ultra-small mobile (<= 380px) */
+  @media (max-width: 380px) {
+    #tech-helix-viewport {
+      perspective: 620px;
+      height: 380px;
+    }
+    .helix-card {
+      width: 66px !important;
+      height: 98px !important;
+      margin-left: -33px !important;
+      margin-top: -49px !important;
+    }
+  }
+
+  /* Standard Mobile Proportion */
   .helix-card {
     width: 74px;
     height: 110px;
@@ -276,8 +291,11 @@ const techStack: TechCard[] = [
     // Responsive dimensions: arc distance > card width so cards NEVER touch or collide
     function getHelixParams() {
       const w = window.innerWidth;
-      if (w < 640) {
-        // Mobile: 74px card width, 110px radius, 42° angle step (Arc = 81px > 74px -> zero overlap)
+      if (w <= 380) {
+        // Ultra-compact mobile (<= 380px screen width)
+        return { radius: 92, verticalStep: 12, angleStep: 45 };
+      } else if (w < 640) {
+        // Standard Mobile: 74px card width, 110px radius, 42° angle step (Arc = 81px > 74px -> zero overlap)
         return { radius: 110, verticalStep: 14, angleStep: 42 };
       } else if (w < 1024) {
         // Tablet: 90px card width, 155px radius, 36° angle step (Arc = 97px > 90px -> zero overlap)

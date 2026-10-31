@@ -186,4 +186,9 @@ export function initGsapAnimations() {
       });
     }
   });
+
+  // Refresh ScrollTrigger once preloader curtain opens and scroll is restored
+  window.addEventListener("preloader:complete", () => {
+    ScrollTrigger.refresh();
+  }, { once: true });
 }
